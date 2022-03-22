@@ -1,0 +1,16 @@
+h3 {
+    color: rgb(35, 29, 59);
+}
+
+p {
+    color: rgb(15, 11, 31);
+}
+
+.text-container {
+    margin: 50px;
+    margin-left: 300px;
+}
+
+.about-text {
+    grid-column: 2;
+}
