@@ -14,7 +14,6 @@ class AboutUs extends Component {
                 <div className='about-text'>
                     <p>lorem ipsum onzin</p>
                     <p>lorem ipsum onzin</p>
-                    <p>lorem ipsum onzin</p>
                 </div>
             </div>
          );

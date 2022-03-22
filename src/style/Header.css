@@ -1,5 +1,7 @@
-#header {
+header {
     background-color: rgb(51, 41, 87);
+    position: sticky;
+    top: 0;
 }
 
 .text-lightblue {

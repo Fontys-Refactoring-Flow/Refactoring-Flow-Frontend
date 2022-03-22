@@ -2,10 +2,10 @@
     color: gray;
 }
 
-#footer {
-    background-color: rgb(51, 41, 87);
-}
-
 footer {
-    position: relative;
+    background-color: rgb(51, 41, 87);
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
 }

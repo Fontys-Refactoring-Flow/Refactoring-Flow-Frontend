@@ -6,8 +6,8 @@ class Footer extends Component {
     state = {  }
     render() { 
         return ( 
-            <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-dark">
-                <div className="col-md-4 d-flex align-items-center">
+            <footer className="py-3 my-4 border-top bg-gradient">
+                <div>
                     <span className="text-muted">© 2022 Refactory Flow, Inc</span>
                 </div>
             </footer>
