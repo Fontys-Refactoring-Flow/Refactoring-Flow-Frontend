@@ -1,6 +1,6 @@
 const UploadProjectPage = () => {
   return (
-    <div>
+    <div className="text-center">
       <h1>Upload Project</h1>
     </div>
   )

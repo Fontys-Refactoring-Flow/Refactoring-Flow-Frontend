@@ -1,6 +1,6 @@
 const GradesPage = () => {
   return (
-    <div>
+    <div className="text-center">
       <h1>Grades</h1>
     </div>
   )
