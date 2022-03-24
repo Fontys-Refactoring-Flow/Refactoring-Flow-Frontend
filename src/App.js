@@ -1,9 +1,11 @@
 import './App.css';
-import Header from './components/Header';
+import Header from './components/GeneralComponents/Header';
 import AboutUs from './components/AboutUs';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import AssignmentsPage from './components/AssignmentComponents/AssignmentsPage';
 import GradesPage from './components/GradesPage';
+import Footer from './components/GeneralComponents/Footer';
+import HomePage from './components/HomePage';
 import CodeUploadPage from './components/CodeUploadComponents/CodeUploadPage';
 
 function App() {
@@ -12,12 +14,13 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-          <Route path='/' element={<AboutUs/>}/>
+          <Route path='/' element={<HomePage/>}/>
           <Route path='/assignments' element={<AssignmentsPage/>}/>
           <Route path='/upload' element={<CodeUploadPage/>}/>
           <Route path='/grades' element={<GradesPage/>}/>
+          <Route path='/about' element={<AboutUs/>}/>
         </Routes>
-        
+        <Footer />
       </div>
     </Router>
   );

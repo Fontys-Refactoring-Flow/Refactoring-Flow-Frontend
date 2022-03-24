@@ -1,0 +1,17 @@
+.button-primary{
+    size: 10cm;
+    align-items: center;
+    background-color: rgb(102, 51, 102);
+    outline:auto;
+}
+
+.button-style{
+    background-color: rgb(102, 51, 102);
+    border-color: rgb(0, 0, 0);
+    border: width 100px;
+}
+
+
+.text-white{
+    color: rgb(255, 241, 241);
+}
