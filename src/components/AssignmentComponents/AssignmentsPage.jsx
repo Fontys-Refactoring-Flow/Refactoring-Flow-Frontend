@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import AssignmentService from '../../Services/AssignmentService';
+import '../../style/AssignmentsPage.css'
 
 
 class AssignmentsPage extends Component {
@@ -22,7 +23,7 @@ class AssignmentsPage extends Component {
         return (
             <div>
                 <h3 className='text-center'>Available challenges</h3>
-                <div className='row'>
+                <div className='row table-container'>
                     <table className='table table-striped table-bordered'>
                         <thead>
                             <tr>

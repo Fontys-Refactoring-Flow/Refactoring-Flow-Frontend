@@ -6,9 +6,15 @@ p {
     color: rgb(15, 11, 31);
 }
 
+h3 {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
 .table-container {
-    margin-left: 10px;
-    margin-right: 10px;
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .text-container {
