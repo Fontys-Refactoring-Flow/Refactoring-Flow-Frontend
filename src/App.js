@@ -1,5 +1,5 @@
 import './App.css';
-import Header from './components/Header';
+import Header from './components/GeneralComponents/Header';
 import AboutUs from './components/AboutUs';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import AssignmentsPage from './components/AssignmentComponents/AssignmentsPage';
