@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import '../style/Footer.css'
+import { Link } from 'react-router-dom'
 
 class Footer extends Component {
     constructor(props) {
@@ -7,8 +9,15 @@ class Footer extends Component {
     state = {  }
     render() { 
         return ( 
-            <footer>
-                
+            <footer className='footer'>
+                <ul class="nav">
+                    <li class="footer-item">
+                        <p className='footer-text'>© 2022</p>
+                    </li>
+                    <li class="nav-item">
+                        <Link to='about' class="footer-link">About us</Link>
+                    </li>   
+                </ul>
             </footer>
          );
     }
