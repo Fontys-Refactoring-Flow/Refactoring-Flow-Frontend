@@ -1,0 +1,11 @@
+.upload-card {
+    height: 50%;
+    width: 20%;
+    margin: 2%;
+}
+
+
+.card-container {
+    display: flex;
+    justify-content: center;
+}
