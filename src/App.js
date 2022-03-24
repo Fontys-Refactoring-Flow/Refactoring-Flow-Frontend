@@ -1,9 +1,8 @@
 import './App.css';
 import Header from './components/Header';
 import AboutUs from './components/AboutUs';
-import ChallengeList from './components/ChallengeList';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import AssignmentsPage from './components/AssignmentsPage';
+import AssignmentsPage from './components/AssignmentComponents/AssignmentsPage';
 import GradesPage from './components/GradesPage';
 import UploadProjectPage from './components/UploadProjectPage';
 

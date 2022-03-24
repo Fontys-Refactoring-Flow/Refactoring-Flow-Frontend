@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import ChallengeService from '../Services/ChallengeService';
+import AssignmentService from '../../Services/AssignmentService';
 
-class ChallengeList extends Component {
+
+class AssignmentsPage extends Component {
     constructor(props) {
         super(props);
 
@@ -11,7 +12,7 @@ class ChallengeList extends Component {
     }
     
     componentDidMount() {
-        ChallengeService.getChallenges().then((res) => {
+        AssignmentService.getChallenges().then((res) => {
             console.log(res)
             this.setState({ challenge: res.data });
         })
@@ -20,7 +21,7 @@ class ChallengeList extends Component {
     render() {
         return (
             <div>
-                <h2 className='text-center'>Available challenges</h2>
+                <h3 className='text-center'>Available challenges</h3>
                 <div className='row'>
                     <table className='table table-striped table-bordered'>
                         <thead>
@@ -52,4 +53,4 @@ class ChallengeList extends Component {
     }
 }
 
-export default ChallengeList;
+export default AssignmentsPage;
