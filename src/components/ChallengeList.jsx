@@ -12,6 +12,7 @@ class ChallengeList extends Component {
     
     componentDidMount() {
         ChallengeService.getChallenges().then((res) => {
+            console.log(res)
             this.setState({ challenge: res.data });
         })
     }
@@ -26,7 +27,7 @@ class ChallengeList extends Component {
                             <tr>
                                 <th>Name</th>
                                 <th>Subject</th>
-                                <th>Level</th>
+                                <th>Difficulty</th>
                                 <th>Duration</th>
                             </tr>
                         </thead>
@@ -36,13 +37,10 @@ class ChallengeList extends Component {
                                 this.state.challenge.map(
                                     challenge =>
                                         <tr key={challenge.id}>
-                                            <td>challenge.Name</td>
-                                            <td>challenge.Subject</td>
-                                            <td>challenge.Level</td>
-                                            <td>challenge.Duration</td>
-                                            <button value={challenge.Name} onClick={console.log("Challenge selected")}>
-                                                {"Select challenge"}
-                                            </button>
+                                            <td>{challenge.name}</td>
+                                            <td>{challenge.subject}</td>
+                                            <td>{challenge.difficulty}</td>
+                                            <td>{challenge.duration}</td>
                                         </tr>
                                 )
                             }
