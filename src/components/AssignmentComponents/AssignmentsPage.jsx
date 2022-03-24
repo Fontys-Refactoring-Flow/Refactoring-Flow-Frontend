@@ -47,7 +47,7 @@ class AssignmentsPage extends Component {
                                             <td>{challenge.difficulty}</td>
                                             <td>{challenge.duration}</td>
                                             <td>
-                                                <Link to='/grades' class="btn button-style text-white"  role="button">Link</Link>
+                                                <Link to='/assignmentDetails' class="btn button-style text-white"  role="button">Link</Link>
                                             </td>
                                         </tr>
                                 )
