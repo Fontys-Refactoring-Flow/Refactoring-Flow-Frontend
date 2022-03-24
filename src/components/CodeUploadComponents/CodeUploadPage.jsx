@@ -11,9 +11,9 @@ class CodeUploadPage extends Component {
         return ( 
             <div>
                 <div className='card-container'>
-                    <UploadMethodCard title='hello' text='world' />
-                    <UploadMethodCard title='github' text='use a github repo' />
-                    <UploadMethodCard title='github' text='use a github repo' />
+                    <UploadMethodCard title='Folder' text='Upload a local folder.' />
+                    <UploadMethodCard title='Github' text='Use an existing Github repository.' />
+                    <UploadMethodCard title='Gitlab' text='use a Gitlab repo' />
                 </div>
                 <div className='card-container'>
                     <UploadMethodCard title='hello' text='world' />
