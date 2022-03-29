@@ -21,6 +21,7 @@ function App() {
           <Route path='/assignments' element={<AssignmentsPage/>}/>
           <Route path='/upload' element={<UploadMethodList/>}/>
           <Route path='/upload/github' element={<GitUploadPage gitPlatform='GitHub'/>}/>
+          <Route path='/upload/gitlab' element={<GitUploadPage gitPlatform='GitLab'/>}/>
           
           <Route path='/grades' element={<GradesPage/>}/>
           <Route path='/about' element={<AboutUs/>}/>

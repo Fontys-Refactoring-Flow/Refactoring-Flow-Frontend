@@ -13,3 +13,8 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+
+.git-input {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
