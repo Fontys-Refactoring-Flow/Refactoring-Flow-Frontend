@@ -9,7 +9,7 @@ class Header extends Component {
     state = {  }
     render() { 
         return ( 
-            <header className='p-3 bg-gradient text-white' id='header'>
+            <header className='p-3  text-white' id='header'>
                 <div className='container'>
                     <div className='d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start'>
                         <a className='d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none'></a>
