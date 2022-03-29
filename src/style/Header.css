@@ -3,5 +3,12 @@
 }
 
 .text-lightblue {
-    color: rgb(255, 241, 241);
+    color: white;
 }
+
+.text-lightblue:hover,.text-lightblue:focus{
+    color:#e5007d
+}
+
+
+

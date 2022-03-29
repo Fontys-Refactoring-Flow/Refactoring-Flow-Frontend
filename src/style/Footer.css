@@ -13,6 +13,10 @@
     margin-left: 0;
     }
 
+.footer-link:hover,.footer-link:focus{
+    color:#e5007d;
+}
+
 .footer-link {
 display: block;
 padding: 0.5rem 1rem;

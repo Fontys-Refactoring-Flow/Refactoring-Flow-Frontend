@@ -3,12 +3,13 @@
     font-size: 32px;
     margin-top: 32px;
     margin-bottom: 0;
+    color:rgb(39, 0, 39)
 }
 
 .title2{
     font-family: monospace;
     font-size: 24px;
-    color:rgb(102, 51, 102);
+    color:#e5007d;
     font-weight: bold;
     margin-bottom: 0;
 }
@@ -43,7 +44,7 @@
 .otro-blockquote::before{
   font-family:Arial;
   content: "\201C";
-  color:rgb(102, 51, 102);
+  color:#e5007d;
   font-size:4em;
   position: absolute;
   left: 10px;
@@ -56,4 +57,8 @@
   font-style: normal;
   font-weight: bold;
   margin-top:1em;
+}
+
+.otro-blockquote::after{
+  content: '';
 }
