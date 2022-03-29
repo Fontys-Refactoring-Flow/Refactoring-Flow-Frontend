@@ -10,6 +10,7 @@ class Footer extends Component {
     render() { 
         return ( 
             <footer className='footer'>
+                <div className='container'>
                 <ul class="nav">
                     <li class="footer-item">
                         <p className='footer-text'>© 2022</p>
@@ -18,6 +19,7 @@ class Footer extends Component {
                         <Link to='about' class="footer-link">About us</Link>
                     </li>   
                 </ul>
+                </div>
             </footer>
          );
     }
