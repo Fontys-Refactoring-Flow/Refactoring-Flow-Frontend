@@ -8,7 +8,8 @@ class UploadMethodCard extends Component {
 
         this.state = {
             title: props.title,
-            text: props.text
+            text: props.text,
+            link: props.link
         }
     }
 
@@ -18,7 +19,7 @@ class UploadMethodCard extends Component {
                 <div className='card-body'>
                     <h5 className='card-title'>{this.state.title}</h5>
                     <p className='card-text'>{this.state.text}</p>
-                    <a className='btn button-style text-white'>select</a>
+                    <a className='btn button-style text-white' href={this.state.link}>select</a>
                 </div>
             </div>
          );
