@@ -15,3 +15,13 @@
 .text-white{
     color: rgb(255, 241, 241);
 }
+
+.button-card{
+    align-items: bottom;
+    background-color: rgb(102, 51, 102);
+    outline:auto;
+    outline-color: rgb(102, 51, 102);
+    position:absolute;
+    
+    
+}

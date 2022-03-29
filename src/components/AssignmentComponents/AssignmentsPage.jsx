@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import AssignmentService from '../../Services/AssignmentService';
 import '../../style/AssignmentsPage.css'
-import Button from '../GeneralComponents/Button';
 import '../../style/Button.css'
 import { Link } from 'react-router-dom';
 
@@ -32,7 +31,7 @@ class AssignmentsPage extends Component {
                                 <div className="card-body">
                                     <h5 className="card-title">{challenge.name}</h5>
                                     <p className="card-text">{challenge.description}</p>
-                                    <Link to='/assignment-details' class="btn button-style text-white" role="button">Show more info</Link>
+                                    <Link to='/assignment-details' className='btn button-card text-white' role="button">Show more info</Link>
                                 </div>
                             </div>
                     )
