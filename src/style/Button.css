@@ -17,11 +17,8 @@
 }
 
 .button-card{
-    align-items: bottom;
     background-color: rgb(102, 51, 102);
     outline:auto;
-    outline-color: rgb(102, 51, 102);
-    position:absolute;
-    
-    
+    outline-color: rgb(102, 51, 102);  
+    align-self: bottom;
 }
