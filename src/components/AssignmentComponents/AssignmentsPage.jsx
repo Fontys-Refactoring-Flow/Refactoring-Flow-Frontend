@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import AssignmentService from '../../Services/AssignmentService';
 import '../../style/AssignmentsPage.css'
-import Button from '../GeneralComponents/Button';
 import '../../style/Button.css'
+import '../../style/Card.css'
 import { Link } from 'react-router-dom';
 
 
 class AssignmentsPage extends Component {
     constructor(props) {
         super(props);
+
 
         this.state = {
             challenge: []
@@ -22,39 +23,25 @@ class AssignmentsPage extends Component {
         })
     }
 
+
     render() {
         return (
-            <div>
-                <h3 className='text-center'>Available challenges</h3>
-                <div className='row table-container'>
-                    <table className='table table-striped table-bordered'>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Subject</th>
-                                <th>Difficulty</th>
-                                <th>Duration</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            {
-                                this.state.challenge.map(
-                                    challenge =>
-                                        <tr key={challenge.id}>
-                                            <td>{challenge.name}</td>
-                                            <td>{challenge.subject}</td>
-                                            <td>{challenge.difficulty}</td>
-                                            <td>{challenge.duration}</td>
-                                            <td>
-                                                <Link to='/assignmentDetails' class="btn button-style text-white"  role="button">Link</Link>
-                                            </td>
-                                        </tr>
-                                )
-                            }
-                        </tbody>
-                    </table>
-                </div>
+            <div className='container' style={{ marginTop: '50px', display: 'flex' }}>
+                {
+                    this.state.challenge.map(
+                        challenge =>
+                            <div className="card card-container" style={{ width: '18rem', margin: '10px' }}>
+                                <div className="card-body">
+                                    <h5 className="card-title">{challenge.name}</h5>
+                                    <p className="card-text">{challenge.description}</p>
+                                </div>
+                                <button className='btn btn-primary' type='button'>
+                                    Show more info
+                                </button>
+                                <Link to='/assignment-details' className='btn button-card text-white' role="button">Select challenge</Link>
+                            </div>
+                    )
+                }
             </div>
         );
     }

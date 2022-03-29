@@ -1,0 +1,59 @@
+.title{
+    font-family: monospace;
+    font-size: 32px;
+    margin-top: 32px;
+    margin-bottom: 0;
+}
+
+.title2{
+    font-family: monospace;
+    font-size: 24px;
+    color:rgb(102, 51, 102);
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.text{
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.text-last{
+    font-family: monospace;
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
+
+.otro-blockquote{
+  font-size: 16px;
+  width:60%;
+  margin:50px auto;
+  font-family:Open Sans;
+  font-style:italic;
+  color: #555555;
+  padding:1.2em 30px 1.2em 75px;
+  border-left:8px solid rgb(102, 51, 102) ;
+  line-height:1.6;
+  position: relative;
+  background:#EDEDED;
+}
+
+.otro-blockquote::before{
+  font-family:Arial;
+  content: "\201C";
+  color:rgb(102, 51, 102);
+  font-size:4em;
+  position: absolute;
+  left: 10px;
+  top:-10px;
+}
+
+.otro-blockquote span{
+  display:block;
+  color:#333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top:1em;
+}

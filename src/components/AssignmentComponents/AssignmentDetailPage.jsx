@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class AssignmentDetailPage extends Component {
     constructor(props) {
         super(props);
@@ -9,7 +8,7 @@ class AssignmentDetailPage extends Component {
     render() { 
         return (  
             <div>
-                <h1 className='text-center'>Stop met de opleiding</h1>
+                <h1 className='text-center'>Ga naar fontys.nl/uitschrijven</h1>
             </div>
         );
     }
