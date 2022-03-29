@@ -1,8 +1,10 @@
-.button-primary{
+.btn-refactoring{
     size: 10cm;
     align-items: center;
     background-color: rgb(102, 51, 102);
+    margin-bottom: 1px;
     outline:auto;
+    align-self: bottom;
 }
 
 .button-style{
@@ -20,5 +22,6 @@
     background-color: rgb(102, 51, 102);
     outline:auto;
     outline-color: rgb(102, 51, 102);  
+    margin-bottom: 1px;
     align-self: bottom;
 }
