@@ -25,9 +25,7 @@ class AssignmentsPage extends Component {
 
     render() {
         return (
-            <div>
-                <h1 >Challenges available</h1>
-                <div className="card-container">
+            <div className='card-container'>
                 {
                     this.state.challenge.map(
                         challenge =>
@@ -38,7 +36,16 @@ class AssignmentsPage extends Component {
                                         <p className="card-text">{challenge.description}</p>
                                         <div class="collapse" id={"collapseExample" + challenge.id}>
                                             <p class="card card-body">
-                                                Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                                                Subject: {challenge.subject}
+                                            </p>
+                                            <p class="card card-body">
+                                                Description: {challenge.description}
+                                            </p>
+                                            <p class="card card-body">
+                                                Difficulty: {challenge.difficulty}
+                                            </p>
+                                            <p class="card card-body">
+                                                Estimated Duration: {challenge.duration}
                                             </p>
                                         </div>
                                         <div className='btn-holder'>
@@ -53,9 +60,8 @@ class AssignmentsPage extends Component {
                     )
                 }
             </div>
-            </div>
-            
-            
+
+
         );
     }
 }
