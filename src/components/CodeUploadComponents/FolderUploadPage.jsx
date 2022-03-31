@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../../style/CodeUpload.css'
 import '../../style/Button.css'
+import '../../style/Home.css'
 import axios from 'axios';
 
 class FolderUpload extends Component {
@@ -30,8 +31,8 @@ class FolderUpload extends Component {
     render() { 
         return ( 
             <div class="container">
+                <p className='title'>Select the repository you want to upload.</p>
                 <div class="input-group mb-3 file-upload-container">
-                    <h3>Select the repository you want to upload.</h3>
                     <input type="file" class="form-control" onChange={this.onFileChange}/>
                 </div>
                 <a className='btn card-button text-white' onClick={this.onFileUpload}>upload</a>

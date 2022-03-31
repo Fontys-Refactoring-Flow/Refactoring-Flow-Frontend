@@ -1,25 +1,32 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import '../../style/CodeUpload.css'
+import '../../style/Button.css'
 
-class CardComponent extends Component {
+class UploadMethodCard extends Component {
     constructor(props) {
         super(props);
-        this.state= { 
+
+        this.state = {
             title: props.title,
-            text: props.text
+            text: props.text,
+            btnText: props.btnText,
+            link: props.link,
+            image: props.image
         }
     }
-    
-    render() {
-        return (
-            <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
+
+    render() { 
+        return ( 
+            <div className='card '>
+                <div className='card-body'>
+                    <img src={this.props.image} className='card-img-top' alt='card image'/>
+                    <h5 className='card-title'>{this.state.title}</h5>
+                    <p className='card-text'>{this.state.text}</p>
+                    <a className='btn card-button text-white' href={this.state.link}>{this.props.btnText}</a>
+                </div>
             </div>
-        );
+         );
     }
 }
-
-export default CardComponent;
+ 
+export default UploadMethodCard;
