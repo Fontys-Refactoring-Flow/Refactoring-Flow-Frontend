@@ -8,8 +8,8 @@ const HomePage = () => {
         <p className='title2'>What is Refactoring?</p>
         <p className='text'>In computer programming and software design, code refactoring is the process of restructuring existing computer code—changing the factoring—without changing its external behavior. Refactoring is intended to improve the design, structure, and/or implementation of the software (its non-functional attributes), while preserving its functionality. Potential advantages of refactoring may include improved code readability and reduced complexity; these can improve the source code's maintainability and create a simpler, cleaner, or more expressive internal architecture or object model to improve extensibility. Another potential goal for refactoring is improved performance; software engineers face an ongoing challenge to write programs that perform faster or use less memory.</p>
         <blockquote class="otro-blockquote">
-            By continuously improving the design of code, we make it easier and easier to work with. This is in sharp contrast to what typically happens: little refactoring and a great deal of attention paid to expediently adding new features. If you get into the hygienic habit of refactoring continuously, you'll find that it is easier to extend and maintain code.
-            <span>Joshua Kerievsky, Refactoring to Patterns</span>
+          Any fool can write code that a computer can understand. Good programmers write code that humans can understand.”
+          <span>― Martin Fowler</span>
         </blockquote>
         <p className='title2'>Benefits</p>
         <p className='text'>

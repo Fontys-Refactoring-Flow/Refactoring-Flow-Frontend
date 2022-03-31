@@ -4,6 +4,8 @@ import AboutUs from './components/AboutUs';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import AssignmentsPage from './components/AssignmentComponents/AssignmentsPage';
 import GradesPage from './components/GradesPage';
+import ProgressPage from './components/ProgressPage';
+import UploadProjectPage from './components/UploadProjectPage';
 import HomePage from './components/HomePage';
 import Footer from './components/GeneralComponents/Footer';
 import AssignmentDetailPage from './components/AssignmentComponents/AssignmentDetailPage';
@@ -26,6 +28,8 @@ function App() {
           <Route path='/upload/folder' element={<FolderUpload/>}/>
           
           <Route path='/grades' element={<GradesPage/>}/>
+          <Route path='/upload' element={<UploadProjectPage/>}/>
+          <Route path='/progress' element={<ProgressPage/>}/>
           <Route path='/about' element={<AboutUs/>}/>
           <Route path='/assignment-details' element={<AssignmentDetailPage />}/>
         </Routes>

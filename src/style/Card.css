@@ -7,11 +7,22 @@
     margin-bottom: 1.5%;
 }
 
-
 .card-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: #EDEDED;
+    margin-top: 32px;
+}
+
+.btn-holder{
+    justify-content: flex-end;
+    display: flex;
+}
+
+.title{
+    font-family: monospace;
+    font-size: 32px;
+    margin-top: 32px;
+    margin-bottom: 0;
 }
 
