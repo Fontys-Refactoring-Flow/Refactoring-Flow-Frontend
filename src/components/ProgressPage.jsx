@@ -1,5 +1,6 @@
 import React from 'react'
 import './../style/Progress.css'
+import './../style/Main.css'
 import { Link } from 'react-router-dom'
 
 const ProgressPage = () => {
@@ -11,7 +12,7 @@ const ProgressPage = () => {
             <div class="card-body">
             <h5 class="card-title">Assignment name</h5>
             <p class="card-text">Uitleg Assignment</p>
-            <a href="#" class="card-button">Assignment Details</a>
+            <a href="#" class="button">Assignment Details</a>
             </div>
         </div>
         <p className='title2'>Reviewed assignments:</p>
@@ -19,7 +20,7 @@ const ProgressPage = () => {
             <div class="card-body">
             <h5 class="card-title">Assignment name</h5>
             <p class="card-text">Uitleg Assignment</p>
-            <Link to='/about'  class="card-button">See feedback </Link> 
+            <Link to='/about'  class="button">See feedback </Link> 
             </div>
         </div>
     </div>
