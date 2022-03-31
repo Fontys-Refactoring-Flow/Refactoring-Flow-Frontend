@@ -1,0 +1,27 @@
+.btn-refactoring{
+    size: 10cm;
+    align-items: center;
+    background-color: rgb(102, 51, 102);
+    margin-bottom: 1px;
+    outline:auto;
+    align-self: bottom;
+}
+
+.button-style{
+    background-color: rgb(102, 51, 102);
+    border-color: rgb(0, 0, 0);
+    border: width 100px;
+}
+
+
+.text-white{
+    color: rgb(255, 241, 241);
+}
+
+.button-card{
+    background-color: rgb(102, 51, 102);
+    outline:auto;
+    outline-color: rgb(102, 51, 102);  
+    margin-bottom: 1px;
+    align-self: bottom;
+}

@@ -1,11 +1,26 @@
-.footer-text {
-    color: gray;
+.footer {
+    background-color:rgb(102, 51, 102);
+    position:fixed;
+    bottom:0;
+     width:100%;
+    height:45px;
 }
 
-footer {
-    background-color: rgb(51, 41, 87);
-    position: sticky;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
+.footer-text {
+    color: rgb(255, 241, 241);
+    display: block;
+    margin: 8px;
+    margin-left: 0;
+    }
+
+.footer-link:hover,.footer-link:focus{
+    color:#e5007d;
+}
+
+.footer-link {
+display: block;
+padding: 0.5rem 1rem;
+color: rgb(255, 241, 241);
+text-decoration: none;
+transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
 }

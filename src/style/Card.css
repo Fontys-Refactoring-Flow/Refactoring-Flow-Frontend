@@ -1,0 +1,28 @@
+.upload-card {
+    height: 50%;
+    width: 20%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+
+.btn-holder{
+    justify-content: flex-end;
+    display: flex;
+}
+
+.title{
+    font-family: monospace;
+    font-size: 32px;
+    margin-top: 32px;
+    margin-bottom: 0;
+}
+

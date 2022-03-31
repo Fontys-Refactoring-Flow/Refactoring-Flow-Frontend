@@ -1,9 +1,14 @@
-header {
-    background-color: rgb(51, 41, 87);
-    position: sticky;
-    top: 0;
+#header {
+    background-color: rgb(102, 51, 102);
 }
 
 .text-lightblue {
-    color: rgb(244, 241, 255);
+    color: white;
 }
+
+.text-lightblue:hover,.text-lightblue:focus{
+    color:#e5007d
+}
+
+
+
