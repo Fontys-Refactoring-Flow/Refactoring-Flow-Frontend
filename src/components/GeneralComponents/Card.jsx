@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../style/Main.css'
 
-class UploadMethodCard extends Component {
+class Card extends Component {
     constructor(props) {
         super(props);
 
@@ -28,4 +28,4 @@ class UploadMethodCard extends Component {
     }
 }
  
-export default UploadMethodCard;
+export default Card;

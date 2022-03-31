@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UploadMethodCard from './UploadMethodCard';
+import Card from '../GeneralComponents/Card';
 import '../../style/Home.css'
 
 class UploadMethodList extends Component {
@@ -10,9 +11,9 @@ class UploadMethodList extends Component {
                 <p class='title'>Select a method to upload your code.</p>
 
                 <div className='card-container'>
-                    <UploadMethodCard title='Folder' text='Upload a local folder.' link='upload/folder'/>
-                    <UploadMethodCard title='Github' text='Use an existing Github repository.' link='upload/github'/>
-                    <UploadMethodCard title='Gitlab' text='use a Gitlab repo' link='upload/gitlab'/>
+                    <Card title='Folder' text='Upload a local folder.' link='upload/folder'/>
+                    <Card title='Github' text='Use an existing Github repository.' link='upload/github'/>
+                    <Card title='Gitlab' text='use a Gitlab repo' btnText='select' link='upload/gitlab'/>
                 </div>
             </div>
          );
