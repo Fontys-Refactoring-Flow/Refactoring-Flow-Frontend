@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../../style/CodeUpload.css'
 import '../../style/Button.css'
+import '../../style/Home.css'
 
 class GitUpload extends Component {
     constructor(props) {
@@ -13,13 +14,13 @@ class GitUpload extends Component {
     render() { 
         return ( 
             <div className='container'>
-                <h3>Upload using {this.state.gitPlatform}</h3>
-                <a>To upload a {this.state.gitPlatform} project to refactoring flow, enter the remote repositories url down below.</a>
+                <p className='title'>Upload using {this.state.gitPlatform}</p>
+                <p>To upload a {this.state.gitPlatform} project to refactoring flow, enter the remote repositories url down below.</p>
                 <div class="input-group flex-nowrap git-input">
                     <span class="input-group-text" id="addon-wrapping">url:</span>
                     <input type="text" class="form-control" placeholder="repository" aria-label="repository" aria-describedby="addon-wrapping"/>
                 </div>
-                <a className='btn button-primary text-white'>continue</a>
+                <a className='btn card-button text-white'>continue</a>
             </div>
          );
     }

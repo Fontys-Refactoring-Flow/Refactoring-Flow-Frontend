@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import UploadMethodCard from './UploadMethodCard';
 import '../../style/CodeUpload.css'
+import '../../style/Home.css'
 
 class UploadMethodList extends Component {
 
     render() { 
         return ( 
-            <div>
-                <h3>Select a method to upload your code.</h3>
+            <div className='container'>
+                <p class='title'>Select a method to upload your code.</p>
 
                 <div className='card-container'>
                     <UploadMethodCard title='Folder' text='Upload a local folder.' link='upload/folder'/>

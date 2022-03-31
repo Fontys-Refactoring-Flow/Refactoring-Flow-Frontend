@@ -19,7 +19,7 @@ class UploadMethodCard extends Component {
                 <div className='card-body'>
                     <h5 className='card-title'>{this.state.title}</h5>
                     <p className='card-text'>{this.state.text}</p>
-                    <a className='btn button-style text-white' href={this.state.link}>select</a>
+                    <a className='btn card-button text-white' href={this.state.link}>select</a>
                 </div>
             </div>
          );
