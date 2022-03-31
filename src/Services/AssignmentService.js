@@ -7,6 +7,11 @@ class AssignmentService{
     getChallenges(){
         return axios.get(CHALLENGE_API_BASE_URL);
     }
+
+    getChallengeById(challengeid){
+        console.log(challengeid);
+        return axios.get(CHALLENGE_API_BASE_URL + '/' + challengeid);
+    }
 }
 
 export default new AssignmentService()
