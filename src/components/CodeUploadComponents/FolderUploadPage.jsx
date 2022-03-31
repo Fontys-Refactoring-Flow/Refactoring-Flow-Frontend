@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import '../../style/CodeUpload.css'
-import '../../style/Button.css'
-import '../../style/Home.css'
-import axios from 'axios';
+import '../../style/Main.css'
+
 
 class FolderUpload extends Component {
     constructor(props) {
@@ -35,7 +33,7 @@ class FolderUpload extends Component {
                 <div class="input-group mb-3 file-upload-container">
                     <input type="file" class="form-control" onChange={this.onFileChange}/>
                 </div>
-                <a className='btn card-button text-white' onClick={this.onFileUpload}>upload</a>
+                <a className='button' onClick={this.onFileUpload}>upload</a>
             </div>
          );
     }

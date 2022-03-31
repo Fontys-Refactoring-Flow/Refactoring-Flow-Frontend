@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import '../../style/Main.css'
 import '../../style/CodeUpload.css'
-import '../../style/Button.css'
-import '../../style/Home.css'
+
 
 class GitUpload extends Component {
     constructor(props) {
@@ -20,7 +20,7 @@ class GitUpload extends Component {
                     <span class="input-group-text" id="addon-wrapping">url:</span>
                     <input type="text" class="form-control" placeholder="repository" aria-label="repository" aria-describedby="addon-wrapping"/>
                 </div>
-                <a className='btn card-button text-white'>continue</a>
+                <a className='button'>continue</a>
             </div>
          );
     }

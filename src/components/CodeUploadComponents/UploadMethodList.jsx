@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import UploadMethodCard from './UploadMethodCard';
-import '../../style/CodeUpload.css'
 import '../../style/Home.css'
 
 class UploadMethodList extends Component {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import '../../style/CodeUpload.css'
-import '../../style/Button.css'
+import '../../style/Main.css'
 
 class UploadMethodCard extends Component {
     constructor(props) {
@@ -19,7 +18,7 @@ class UploadMethodCard extends Component {
                 <div className='card-body'>
                     <h5 className='card-title'>{this.state.title}</h5>
                     <p className='card-text'>{this.state.text}</p>
-                    <a className='btn card-button text-white' href={this.state.link}>select</a>
+                    <a className='button' href={this.state.link}>select</a>
                 </div>
             </div>
          );
