@@ -8,7 +8,8 @@ import HomePage from './components/HomePage';
 import Footer from './components/GeneralComponents/Footer';
 import AssignmentDetailPage from './components/AssignmentComponents/AssignmentDetailPage';
 import UploadMethodList from './components/CodeUploadComponents/UploadMethodList';
-import GitUploadPage from './components/CodeUploadComponents/GitUploadPage';
+import GitUpload from './components/CodeUploadComponents/GitUploadPage';
+import FolderUpload from './components/CodeUploadComponents/FolderUploadPage';
 
 
 function App() {
@@ -20,8 +21,9 @@ function App() {
           <Route path='/' element={<HomePage/>}/>
           <Route path='/assignments' element={<AssignmentsPage/>}/>
           <Route path='/upload' element={<UploadMethodList/>}/>
-          <Route path='/upload/github' element={<GitUploadPage gitPlatform='GitHub'/>}/>
-          <Route path='/upload/gitlab' element={<GitUploadPage gitPlatform='GitLab'/>}/>
+          <Route path='/upload/github' element={<GitUpload gitPlatform='GitHub'/>}/>
+          <Route path='/upload/gitlab' element={<GitUpload gitPlatform='GitLab'/>}/>
+          <Route path='/upload/folder' element={<FolderUpload/>}/>
           
           <Route path='/grades' element={<GradesPage/>}/>
           <Route path='/about' element={<AboutUs/>}/>

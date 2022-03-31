@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../../style/CodeUpload.css'
 import '../../style/Button.css'
 
-class GitUploadPage extends Component {
+class GitUpload extends Component {
     constructor(props) {
         super(props);
 
@@ -25,4 +25,4 @@ class GitUploadPage extends Component {
     }
 }
  
-export default GitUploadPage;
+export default GitUpload;
