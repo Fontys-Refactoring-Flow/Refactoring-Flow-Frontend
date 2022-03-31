@@ -1,24 +1,3 @@
-.title{
-    font-family: monospace;
-    font-size: 32px;
-    margin-top: 32px;
-    margin-bottom: 0;
-    color:rgb(39, 0, 39)
-}
-
-.title2{
-    font-family: monospace;
-    font-size: 24px;
-    color:#e5007d;
-    font-weight: bold;
-    margin-bottom: 0;
-}
-
-.text{
-    font-family: monospace;
-    font-size: 16px;
-}
-
 .text-last{
     font-family: monospace;
     font-size: 16px;
