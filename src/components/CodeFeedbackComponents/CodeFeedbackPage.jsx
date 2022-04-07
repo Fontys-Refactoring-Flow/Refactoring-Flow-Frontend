@@ -8,7 +8,7 @@ const CodeFeedbackPage = () => {
             <textarea rows='30' className='form-control code-field'></textarea>
 
             <div className='feedback-container'>
-                <FeedbackBubble />
+                <FeedbackBubble text='feedback'/>
             </div>
         </div>
     );
