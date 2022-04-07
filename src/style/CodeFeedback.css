@@ -1,0 +1,18 @@
+.code-feedback-Container {
+    display: flex;
+    margin-top: 3%;
+}
+
+.feedback-container {
+    margin-left: 5%;
+    width: 20%;
+}
+
+.code-field {
+    width: 70%;
+}
+
+.feedback-bubble {
+    background-color: rgb(255, 238, 255);
+    border-color: rgb(203, 190, 203);
+}
