@@ -16,3 +16,10 @@
     background-color: rgb(255, 238, 255);
     border-color: rgb(203, 190, 203);
 }
+
+.editor-container {
+    background-color: rgb(58, 57, 59);
+    border-radius: 15px;
+    padding: 10px;
+    min-height: 500px;
+}
