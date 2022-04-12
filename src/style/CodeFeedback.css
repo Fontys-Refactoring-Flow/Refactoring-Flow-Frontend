@@ -23,3 +23,14 @@
     padding: 10px;
     min-height: 500px;
 }
+
+.font-btn {
+    background-color: rgb(73, 70, 77);
+    color: rgb(196, 181, 196);
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.font-btn:hover{
+    background-color: rgb(101, 94, 109);
+}

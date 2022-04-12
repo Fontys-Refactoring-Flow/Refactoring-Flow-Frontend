@@ -12,6 +12,8 @@ const Codefield = () => {
 
     return(
         <div className='editor-container'>
+            <button onClick={() => setFontsize(fontsize + 2)} className='font-btn btn'>plus</button>
+            <button onClick={() => setFontsize(fontsize - 2)} className='font-btn btn'>min</button>
             <CodeEditor
                 value={code}
                 language='java'
