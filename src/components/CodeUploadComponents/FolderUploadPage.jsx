@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CodeFormater from '../../Services/CodeFormater';
 import '../../style/Main.css'
 
 
@@ -24,6 +25,7 @@ class FolderUpload extends Component {
         );
 
         console.log(this.state.selectedFile);
+        console.log(CodeFormater.FileToJson(this.state.selectedFile))
     }
 
     render() { 
