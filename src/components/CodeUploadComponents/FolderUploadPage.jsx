@@ -9,6 +9,12 @@ class FolderUpload extends Component {
         fileString: ''
     }
 
+    ChangeFileString = (newFileString) => {
+        this.setState({
+            fileString: newFileString
+        });
+    }
+
     ReadSingleFile(evt){
         var file = evt.target.files[0]; 
 
@@ -18,9 +24,7 @@ class FolderUpload extends Component {
                 var contents = e.target.result;
                 const fileContent = contents;
                 
-                this.setState({
-                    fileString: fileContent
-                })
+                this.ChangeFileString(contents);
                 
                 console.log(fileContent);
                 console.log(this.state.fileString);
@@ -32,7 +36,7 @@ class FolderUpload extends Component {
     }
 
     onFileChange = event => {
-        this.setState({ selectedFile: event.target.files[0] });
+        //this.setState({ selectedFile: event.target.files[0] });
         this.ReadSingleFile(event);
     }
 
@@ -56,10 +60,10 @@ class FolderUpload extends Component {
 
     render() { 
         return ( 
-            <div class="container">
+            <div className='container'>
                 <p className='title'>Select the repository you want to upload.</p>
-                <div class="input-group mb-3 file-upload-container">
-                    <input type="file" class="form-control" onChange={this.onFileChange}/>
+                <div className='input-group mb-3 file-upload-container'>
+                    <input type="file" className='form-control' onChange={this.onFileChange}/>
                 </div>
                 <a className='button' onClick={this.onFileUpload}>upload</a>
             </div>
