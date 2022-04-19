@@ -3,16 +3,37 @@ import '../../style/Main.css'
 
 
 class FolderUpload extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     state = {
-        selectedFile: null
+        selectedFile: null,
+        fileString: ''
+    }
+
+    ReadSingleFile(evt){
+        var file = evt.target.files[0]; 
+
+        if (file) {
+            var r = new FileReader();
+            r.onload = function(e) { 
+                var contents = e.target.result;
+                const fileContent = contents;
+                
+                this.setState({
+                    fileString: fileContent
+                })
+                
+                console.log(fileContent);
+                console.log(this.state.fileString);
+            }
+            r.readAsText(file);
+        } else { 
+            alert("Failed to load file");
+        }
     }
 
     onFileChange = event => {
         this.setState({ selectedFile: event.target.files[0] });
+        this.ReadSingleFile(event);
     }
 
     onFileUpload = () => {
@@ -24,6 +45,13 @@ class FolderUpload extends Component {
         );
 
         console.log(this.state.selectedFile);
+
+        // const fs = require("fs");
+        // fs.readFile(this.state.selectedFile, (err, data) => {
+        //     if(err) throw err;
+
+        //     console.log(data.toString());
+        // });
     }
 
     render() { 
