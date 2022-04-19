@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import AssignmentService from '../../Services/AssignmentService';
-import ProgressBar from "bootstrap-progress-bar";
 
 class AssignmentDetailPage extends Component {
     constructor(props) {
