@@ -4,30 +4,29 @@ import '../../style/CodeFeedback.css'
 
 const Codefield = () => {
     const [code, setCode] = React.useState(
-        'public class Cell{ \n' +
-        '    boolean isMarked; \n' +
-        '    boolean containsMine; \n' +
-        '    boolean isRevealed; \n' +
-        '    public Cell(int XPos, int YPos, boolean isMine){ \n' +
-        '        xPos = XPos; \n' +
-        '        yPos = YPos; \n' +
-        '        isMarked = false; \n' +
-        '        containsMine = isMine; \n' +
-        '        isRevealed = false; \n' +
-        '    } \n \n' +
-        '    public void ToggleMark(){ \n' +
-        '    isMarked = !isMarked; \n' +
-        '    } \n' +
-        '    public boolean GetContainsMine(){ \n' +
-        '        return containsMine; \n' +
+        'public class Cell{\n' +
+        '    boolean isMarked;\n' +
+        '    boolean containsMine;\n' +
+        '    boolean isRevealed;\n' +
+        '    public Cell(int XPos, int YPos, boolean isMine){\n' +
+        '        xPos = XPos;\n' +
+        '        yPos = YPos;\n' +
+        '        isMarked = false;\n' +
+        '        containsMine = isMine;\n' +
+        '        isRevealed = false;\n' +
         '    }\n\n' +
-        '    // returns true if the cell contains a mine \n' +
-        '    public boolean Reveal(){ \n' +
-        '        isRevealed = true; \n' +
-        '        return containsMine; \n' +
-        '    } \n' +
+        '    public void ToggleMark(){\n' +
+        '    isMarked = !isMarked;\n' +
+        '    }\n\n' +
+        '    public boolean GetContainsMine(){\n' +
+        '        return containsMine;\n' +
+        '    }\n\n' +
+        '    // returns true if the cell contains a mine\n' +
+        '    public boolean Reveal(){\n' +
+        '        isRevealed = true;\n' +
+        '        return containsMine;\n' +
+        '    }\n' +
         '}'
-
     );
 
     // To be able to change the fontsize
