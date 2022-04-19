@@ -19,10 +19,10 @@ class Card extends Component {
         return ( 
             <div className='card upload-card'>
                 <div className='card-body'>
-                    <img src={this.props.image} className='card-img-top card-image' alt='card image'/>
+                    <img src={this.state.image} className='card-img-top card-image' alt='card image'/>
                     <h5 className='card-title'>{this.state.title}</h5>
                     <p className='card-text'>{this.state.text}</p>
-                    <a className='button' href={this.state.link}>{this.props.btnText}</a>
+                    <a className='button' href={this.state.link}>{this.state.btnText}</a>
                 </div>
             </div>
          );
