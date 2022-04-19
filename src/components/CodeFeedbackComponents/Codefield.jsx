@@ -3,9 +3,8 @@ import CodeEditor from '@uiw/react-textarea-code-editor';
 import '../../style/CodeFeedback.css'
 
 const Codefield = () => {
-    const [code, setCode] = React.useState(
-        'int i = 10;'
-    );
+
+    const [code, setCode] = React.useState();
 
     // To be able to change the fontsize
     const [fontsize, setFontsize] = React.useState(14); // default fontsize is 14

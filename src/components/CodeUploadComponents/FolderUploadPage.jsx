@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../style/Main.css'
 
 
@@ -49,6 +50,9 @@ const FolderUpload = () => {
                 <input type="file" className='form-control' onChange={OnFileChange}/>
             </div>
             <p className='button' onClick={OnFileUpload}>upload</p>
+            
+            // Link does not work as of now, need to pass text someway
+            <Link to={{pathname: '/edit', state: {code: fileString}}} className='button'>editor</Link>
         </div>
     );
 }
