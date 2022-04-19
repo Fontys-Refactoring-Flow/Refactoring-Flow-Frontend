@@ -10,7 +10,7 @@ class AssignmentService{
 
     getChallengeById(challengeid){
         console.log(challengeid);
-        return axios.get(CHALLENGE_API_BASE_URL + '/' + challengeid);
+        return axios.get(CHALLENGE_API_BASE_URL + '/' + "id" + "/" + challengeid);
     }
 }
 
