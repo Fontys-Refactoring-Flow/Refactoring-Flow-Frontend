@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CookieManager from '../../Services/CookieManager';
 import '../../style/Main.css'
 
 
@@ -39,6 +40,7 @@ const FolderUpload = () => {
             selectedFile.name
         );
 
+        CookieManager.SetUploadedCode(fileString);
         // TODO: proceed to upload the file to the database or open the editor. 
     }
 
@@ -51,8 +53,7 @@ const FolderUpload = () => {
             </div>
             <p className='button' onClick={OnFileUpload}>upload</p>
             
-            // Link does not work as of now, need to pass text someway
-            <Link to={{pathname: '/edit', state: {code: fileString}}} className='button'>editor</Link>
+            <Link to='/edit' className='button'>editor</Link>
         </div>
     );
 }

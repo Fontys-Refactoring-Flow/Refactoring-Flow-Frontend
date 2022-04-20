@@ -1,13 +1,18 @@
 import React from 'react';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import '../../style/CodeFeedback.css'
+import CookieManager from '../../Services/CookieManager';
 
 const Codefield = () => {
 
     const [code, setCode] = React.useState();
 
+    const uploadedCode = CookieManager.GetAndClearUploadedCode();
+    //setCode(uploadedCode); //this does not work :(
+
     // To be able to change the fontsize
     const [fontsize, setFontsize] = React.useState(14); // default fontsize is 14
+
 
     return(
         <div className='editor-container'>
