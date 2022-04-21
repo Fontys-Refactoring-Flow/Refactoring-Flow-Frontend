@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CookieManager from '../../Services/CookieManager';
-import '../../style/Main.css'
+import LocalStorageManager from '../../Services/LocalStorageManager';
+import '../../style/Main.css';
 
 
 const FolderUpload = () => {
@@ -30,6 +30,9 @@ const FolderUpload = () => {
     function OnFileChange(event){
         setSelectedFile(event.target.files[0]);
         ReadSingleFile(event);
+
+        // add the code to local storage to transfer it in the editor.
+        LocalStorageManager.SetUploadedCode(fileString);
     }
 
     function OnFileUpload(){
@@ -40,8 +43,7 @@ const FolderUpload = () => {
             selectedFile.name
         );
 
-        CookieManager.SetUploadedCode(fileString);
-        // TODO: proceed to upload the file to the database or open the editor. 
+        // TODO: proceed to upload the file to the database.
     }
 
     
@@ -51,7 +53,7 @@ const FolderUpload = () => {
             <div className='input-group mb-3 file-upload-container'>
                 <input type="file" className='form-control' onChange={OnFileChange}/>
             </div>
-            <p className='button' onClick={OnFileUpload}>upload</p>
+            <button className='button' onClick={OnFileUpload} style={{'margin-right': '10px'}}>upload</button>
             
             <Link to='/edit' className='button'>editor</Link>
         </div>

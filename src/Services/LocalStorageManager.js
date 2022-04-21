@@ -1,5 +1,5 @@
-class CookieManager {
-
+class LocalStorageManager {
+    
     CodeKey = 'uploadCode';
 
     GetUploadedCode(){
@@ -17,4 +17,4 @@ class CookieManager {
     }
 }
 
-export default new CookieManager();
+export default new LocalStorageManager();

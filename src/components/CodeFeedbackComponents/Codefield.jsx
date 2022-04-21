@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import '../../style/CodeFeedback.css'
-import CookieManager from '../../Services/CookieManager';
+import LocalStorageManager from '../../Services/LocalStorageManager';
 
 const Codefield = () => {
 
-    const [code, setCode] = React.useState();
-
-    const uploadedCode = CookieManager.GetAndClearUploadedCode();
-    //setCode(uploadedCode); //this does not work :(
-
-    // To be able to change the fontsize
+    const [code, setCode] = React.useState(); // default is the uploaded code
     const [fontsize, setFontsize] = React.useState(14); // default fontsize is 14
+
+
+    // useEffect with a empty array to simulate a componentDidMount method.
+    // The code should only be loaded once instead of with every component refresh. 
+    useEffect(() => {
+        const uploadedCode = LocalStorageManager.GetUploadedCode();
+        setCode(uploadedCode);
+    }, []);
 
 
     return(
