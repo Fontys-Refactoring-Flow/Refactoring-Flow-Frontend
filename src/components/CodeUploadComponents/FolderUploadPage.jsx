@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import LocalStorageManager from '../../Services/LocalStorageManager';
 import '../../style/Main.css';
 
@@ -10,14 +9,20 @@ const FolderUpload = () => {
     const [fileString, setFileString] = React.useState();
 
 
+    const addFileStringToLocal = () => {
+        LocalStorageManager.SetUploadedCode(fileString);
+    }
+
+
     function ReadSingleFile(evt){
-        var file = evt.target.files[0]; 
+        var file = evt.target.files[0];
 
         if (file) {
             var r = new FileReader();
             r.onload = function(e) { 
                 var contents = e.target.result;
                 setFileString(contents);
+                // setFlushFileString(contents);
             }
 
             r.readAsText(file);
@@ -32,7 +37,6 @@ const FolderUpload = () => {
         ReadSingleFile(event);
 
         // add the code to local storage to transfer it in the editor.
-        LocalStorageManager.SetUploadedCode(fileString);
     }
 
     function OnFileUpload(){
@@ -45,7 +49,6 @@ const FolderUpload = () => {
 
         // TODO: proceed to upload the file to the database.
     }
-
     
     return ( 
         <div className='container'>
@@ -55,7 +58,7 @@ const FolderUpload = () => {
             </div>
             <button className='button' onClick={OnFileUpload} style={{'margin-right': '10px'}}>upload</button>
             
-            <Link to='/edit' className='button'>editor</Link>
+            <a href='/edit' className='button' onClick={addFileStringToLocal}>editor</a>
         </div>
     );
 }
