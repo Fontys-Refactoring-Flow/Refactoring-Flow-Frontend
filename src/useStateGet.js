@@ -1,7 +1,7 @@
 import React from 'react';
 import { flushSync } from 'react-dom';
 
-
+// This hook is actually useless...
 function useStateGet(value) {
     const [target, setTarget] = React.useState(value);
     

@@ -1,21 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import LocalStorageManager from '../../Services/LocalStorageManager';
 import '../../style/Main.css';
-import useStateGet from '../../useStateGet';
 
 
 const FolderUpload = () => {
 
     const [selectedFile, setSelectedFile] = React.useState(null);
-    const [updateState, setUpdateState] = React.useState();
-    // const [fileString, setFileString] = React.useState();
-    const [fileString, setFileString, getFileString, setFlushFileString] = useStateGet('');
+    const [fileString, setFileString] = React.useState();
+
 
     const addFileStringToLocal = () => {
-        setUpdateState('hi');
-
-        console.log(fileString);
         LocalStorageManager.SetUploadedCode(fileString);
     }
 
@@ -27,8 +21,8 @@ const FolderUpload = () => {
             var r = new FileReader();
             r.onload = function(e) { 
                 var contents = e.target.result;
-                // setFileString(contents);
-                setFlushFileString(contents);
+                setFileString(contents);
+                // setFlushFileString(contents);
             }
 
             r.readAsText(file);
@@ -43,30 +37,6 @@ const FolderUpload = () => {
         ReadSingleFile(event);
 
         // add the code to local storage to transfer it in the editor.
-        //console.log(fileString); // filestring is undefined first time because state is async
-
-        let loadedFileString = getFileString();
-        console.log(loadedFileString);
-
-        const test = getFileString().then(
-            function(value){
-                loadedFileString = value;
-            },
-            function(error){
-                alert(error);
-            }
-        );
-
-
-        // console.log(fileString);
-        // console.log(getFileString());
-        
-        // console.log(test);
-        // console.log(loadedFileString);
-        // console.log(getFileString().value);
-        console.log(fileString);
-        // addFileStringToLocal();
-        LocalStorageManager.SetUploadedCode(fileString);
     }
 
     function OnFileUpload(){
@@ -79,7 +49,6 @@ const FolderUpload = () => {
 
         // TODO: proceed to upload the file to the database.
     }
-
     
     return ( 
         <div className='container'>
@@ -88,10 +57,8 @@ const FolderUpload = () => {
                 <input type="file" className='form-control' onChange={OnFileChange}/>
             </div>
             <button className='button' onClick={OnFileUpload} style={{'margin-right': '10px'}}>upload</button>
-            <button className='button' onClick={addFileStringToLocal}>refresh</button>
             
-            <Link to='/edit' className='button'>editor</Link>
-            <a href='/edit' className='button' onClick={addFileStringToLocal}>editor2</a>
+            <a href='/edit' className='button' onClick={addFileStringToLocal}>editor</a>
         </div>
     );
 }
