@@ -5,7 +5,9 @@ function useStateGet(value) {
     const [target, setTarget] = React.useState(value);
     
     const getTarget = async () => {
-        return target.value;
+        let value = await target;
+        //console.log('value function: ' + value);
+        return value;
     }
 
     return [target, setTarget, getTarget];
