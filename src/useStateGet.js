@@ -1,16 +1,22 @@
 import React from 'react';
+import { flushSync } from 'react-dom';
 
 
 function useStateGet(value) {
     const [target, setTarget] = React.useState(value);
     
     const getTarget = async () => {
-        let value = await target;
-        //console.log('value function: ' + value);
-        return value;
+        let newValue = await target;
+        return newValue;
     }
 
-    return [target, setTarget, getTarget];
+    const setFlushTarget = (newValue) => {
+        flushSync(() => {
+            setTarget(newValue);
+        });
+    }
+
+    return [target, setTarget, getTarget, setFlushTarget];
 }
 
 export default useStateGet;
