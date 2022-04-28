@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import '../../style/CodeFeedback.css'
 import LocalStorageManager from '../../Services/LocalStorageManager';
+import CodeService from '../../Services/CodeService';
 
 const Codefield = () => {
 
@@ -31,6 +32,7 @@ const Codefield = () => {
         <div className='editor-container'>
             <button onClick={() => setFontsize(fontsize + 2)} className='font-btn btn'>plus</button>
             <button onClick={() => setFontsize(fontsize - 2)} className='font-btn btn'>min</button>
+            <button onClick={() => CodeService.EncodeString(code)} className='font-btn btn'>save file</button>
             <CodeEditor
                 value={code}
                 language='java'
