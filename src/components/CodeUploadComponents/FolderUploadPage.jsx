@@ -36,7 +36,7 @@ const FolderUpload = () => {
         setSelectedFile(event.target.files[0]);
         ReadSingleFile(event);
 
-        // add the code to local storage to transfer it in the editor.
+        // add the code to local storage to transfer it to the editor.
     }
 
     function OnFileUpload(){

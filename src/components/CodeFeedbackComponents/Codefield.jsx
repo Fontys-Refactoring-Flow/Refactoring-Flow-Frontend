@@ -12,7 +12,17 @@ const Codefield = () => {
     // useEffect with a empty array to simulate a componentDidMount method.
     // The code should only be loaded once instead of with every component refresh. 
     useEffect(() => {
-        const uploadedCode = LocalStorageManager.GetUploadedCode();
+        let uploadedCode = LocalStorageManager.GetUploadedCode();
+
+        if(uploadedCode === 'undefined'){
+            uploadedCode = 
+            'public class MyFirstJavaProgram {\n' +
+            '    public static void main(String []args) {\n' +
+            '        System.out.println("Hello World");\n' +
+            '    }\n' + 
+            '}'
+        }
+
         setCode(uploadedCode);
     }, []);
 
