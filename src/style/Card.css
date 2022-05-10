@@ -27,6 +27,7 @@
 .btn-holder{
     justify-content: flex-end;
     display: flex;
+    ;
 }
 
 .title{
@@ -34,5 +35,10 @@
     font-size: 32px;
     margin-top: 32px;
     margin-bottom: 0;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
 }
 

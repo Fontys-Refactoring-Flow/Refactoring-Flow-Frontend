@@ -1,27 +1,25 @@
 import React, { Component } from 'react'
-import AssignmentService from '../../Services/AssignmentService';
-import '../../style/AssignmentsPage.css'
 import '../../style/Button.css'
 import '../../style/Card.css'
 import { Link } from 'react-router-dom';
+import AssignmentService from '../../Services/AssignmentService';
 
-class AssignmentsPage extends Component {
+class AssignmentInProgress extends Component {
     constructor(props) {
         super(props);
 
-
         this.state = {
+            studentid: 1,
             challenge: []
         }
     }
 
     componentDidMount() {
-        AssignmentService.getChallenges().then((res) => {
+        AssignmentService.getChallengeByStudentId(this.state.studentid).then((res) => {
             console.log(res)
             this.setState({ challenge: res.data });
         })
     }
-
 
     render() {
         return (
@@ -49,10 +47,10 @@ class AssignmentsPage extends Component {
                                             </p>
                                         </div>
                                         <div className='button-container'>
-                                            <button class="btn btn-refactoring text-white" data-bs-toggle="collapse" data-bs-target={"#collapseExample" + challenge.id} aria-expanded="false" aria-controls="collapseExample">
+                                            <button class="btn btn-refactoring text-white" type="button" data-bs-toggle="collapse" data-bs-target={"#collapseExample" + challenge.id} aria-expanded="false" aria-controls="collapseExample">
                                                 Show more info
                                             </button>
-                                            <Link to='/assignment-details' className='btn btn-refactoring text-white' role="button" id={challenge.id}>Select challenge</Link>
+                                            <Link to='/assignment-details' className='btn btn-refactoring text-white' role="button" id={challenge.id}>Continue challenge</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -63,5 +61,5 @@ class AssignmentsPage extends Component {
         );
     }
 }
-
-export default AssignmentsPage;
+ 
+export default AssignmentInProgress;

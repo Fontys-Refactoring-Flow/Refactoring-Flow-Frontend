@@ -1,29 +1,49 @@
 import React, { Component } from 'react';
-import AssignmentService from '../../Services/AssignmentService';
+import LearningOutcomesService from '../../Services/LearningOutcomesService';
 
-class AssignmentDetailPage extends Component {
+class LearningOutcomes extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            challenge: [],
-            challengeid: 2,
-            codeQualityProgress: []
-            
+            studentid: 1,
+            learningOutcomes: [],
+            refactoringBar: 0,
+            codeQualityBar: 0
         }
+        this.handleProgressBar = this.handleProgressBar.bind(this);
     }
 
     componentDidMount() {
-        AssignmentService.getChallengeById(this.state.challengeid).then((res) => {
-            console.log(res)
-            this.setState({ challenge: res.data });
+        LearningOutcomesService.getLearningOutcomesByStudentId(this.state.studentid).then((res) => {
+            //console.log(res)
+            this.setState({ learningOutcomes: res.data });
+            this.setState({ refactoringBar: ((this.state.learningOutcomes.refactoring / 5) * 100)})
+            console.log(this.state.refactoringBar);
         })
+    }
+
+    handleProgressBar(outcome){
+        if(outcome == 1){
+            return '20%'
+        }
+        else if(outcome == 2){
+            return '40%'
+        }
+        else if(outcome == 3){
+            return '60%'
+        }
+        else if(outcome == 4){
+            return '80%'
+        }
+        else if(outcome == 5){
+            return '100%'
+        }
     }
 
     render() {
         return (
-            <div className='container'>
-                <h1 className='text-center'>{this.state.challenge.name}</h1>
+            <div className='container' style={{"marginTop": 50}}>
                 <table className='table table-striped table-bordered'>
                     <thead>
                         <tr>
@@ -40,11 +60,11 @@ class AssignmentDetailPage extends Component {
                             </th>
                             <th colspan="3" class="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none">
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={{ width: "50%", backgroundColor: "#663366" }}></div>
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={{width: this.handleProgressBar(this.state.learningOutcomes.codeQuality), backgroundColor: "#663366"}}></div>
                                 </div>
                             </th>
                             <th colspan="3" class="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none" style={{ width: '20%' }}>
-
+                                {this.state.learningOutcomes.codeQuality}/5
                             </th>
 
                         </tr>
@@ -54,8 +74,11 @@ class AssignmentDetailPage extends Component {
                             </th>
                             <th colspan="3" class="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none">
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={{ width: "75%", backgroundColor: "#e5007d" }}></div>
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={{width: this.handleProgressBar(this.state.learningOutcomes.refactoring), backgroundColor: "#e5007d" }}></div>
                                 </div>
+                            </th>
+                            <th colspan="3" class="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none" style={{ width: '20%' }}>
+                                {this.state.learningOutcomes.refactoring}/5
                             </th>
                         </tr>
                     </thead>
@@ -66,4 +89,4 @@ class AssignmentDetailPage extends Component {
     }
 }
 
-export default AssignmentDetailPage;
+export default LearningOutcomes;
