@@ -1,3 +1,5 @@
+import axios from "axios";
+
 class CodeService {
 
     EncodeString(string){
@@ -6,8 +8,18 @@ class CodeService {
         return encodedString;
     }
 
-    postCode(string){
+    PostCode(string){
         let codeByteArr = this.EncodeString(string);
+        let myBlob = new Blob(codeByteArr, {type: 'application/json'});
+        console.log(myBlob.text());
+        
+        try{
+            axios.post('http://localhost:8080/api/v1/CodeFile', myBlob);
+            console.log('succes?')
+        }
+        catch(err){
+            console.log(err);
+        }
     }
 }
 
