@@ -12,6 +12,7 @@ import UploadMethodList from './components/CodeUploadComponents/UploadMethodList
 import GitUpload from './components/CodeUploadComponents/GitUploadPage';
 import FolderUpload from './components/CodeUploadComponents/FolderUploadPage';
 import AssignmentInProgress from './components/AssignmentComponents/AssignmentsInProgress';
+import Login from './components/LoginComponents/Login';
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
           <Route path='/upload/github' element={<GitUpload gitPlatform='GitHub'/>}/>
           <Route path='/upload/gitlab' element={<GitUpload gitPlatform='GitLab'/>}/>
           <Route path='/upload/folder' element={<FolderUpload/>}/>
-          
+          <Route path='/login' element={<Login/>}/>
           <Route path='/upload' element={<UploadProjectPage/>}/>
           <Route path='/progress' element={<ProgressPage/>}/>
           <Route path='/about' element={<AboutUs/>}/>
