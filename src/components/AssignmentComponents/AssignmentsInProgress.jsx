@@ -3,13 +3,14 @@ import '../../style/Button.css'
 import '../../style/Card.css'
 import { Link } from 'react-router-dom';
 import AssignmentService from '../../Services/AssignmentService';
+import SessionHandler from '../../SessionHandler/SessionHandler';
 
 class AssignmentInProgress extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            studentid: 1,
+            studentid: SessionHandler.getStudentId(),
             assignment: []
         }
     }
