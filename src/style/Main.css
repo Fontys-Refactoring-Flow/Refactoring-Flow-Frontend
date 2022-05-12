@@ -1,62 +1,87 @@
-.title{
-    font-family: monospace;
-    font-size: 32px;
-    margin-top: 32px;
-    margin-bottom: 0;
-    color:rgb(39, 0, 39)
+.title {
+  font-family: monospace;
+  font-size: 32px;
+  margin-top: 32px;
+  margin-bottom: 0;
+  color: rgb(39, 0, 39)
 }
 
-.title2{
-    font-family: monospace;
-    font-size: 24px;
-    color:#e5007d;
-    font-weight: bold;
-    margin-bottom: 0;
+.title2 {
+  font-family: monospace;
+  font-size: 24px;
+  color: #e5007d;
+  font-weight: bold;
+  margin-bottom: 0;
 }
 
-.text{
-    font-family: monospace;
-    font-size: 16px;
+.text {
+  font-family: monospace;
+  font-size: 16px;
 }
 
- .button{
-     background-color: rgb(102, 51, 102);
-     color:white;
-     border-color: rgb(102,51,102);
-     display: inline-block;
-     text-decoration: none;    
-     cursor: pointer;
-     padding: 0.375rem 0.75rem;
-     border-radius: 0.25rem;
-     text-align: center;
-     text-decoration: none;
-     vertical-align: middle;
- }
+.button {
+  background-color: rgb(102, 51, 102);
+  color: white;
+  border-color: rgb(102, 51, 102);
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  margin-top: auto;
+}
 
- .button:hover {
-    background-color: #e5007d;
-    color:white;
- }
+.card-button{
+  background-color: rgb(102, 51, 102);
+  color: white;
+  border-color: rgb(102, 51, 102);
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  margin-top: auto;
+  margin-bottom: 5px;
+}
 
- /* width */
+.button-container {
+  text-align: center;
+  margin-top: auto;
+}
+
+.button:hover {
+  background-color: #e5007d;
+  color: white;
+}
+
+/* width */
 ::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgb(102,51,102); 
-    border:2px solid #f1f1f1;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #e5007d; 
-  }
- html { overflow-y: scroll; }
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(102, 51, 102);
+  border: 2px solid #f1f1f1;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #e5007d;
+}
+
+html {
+  overflow-y: scroll;
+}

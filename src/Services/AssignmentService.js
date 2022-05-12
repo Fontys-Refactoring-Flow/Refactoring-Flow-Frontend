@@ -1,16 +1,20 @@
 import axios from "axios";
 
-const CHALLENGE_API_BASE_URL = "http://localhost:8080/api/v1/challenge";
+const ASSIGNMENT_API_BASE_URL = "http://localhost:8080/api/v1/assignment";
 
 class AssignmentService{
 
-    getChallenges(){
-        return axios.get(CHALLENGE_API_BASE_URL);
+    getAssignments(){
+        return axios.get(ASSIGNMENT_API_BASE_URL);
     }
 
-    getChallengeById(challengeid){
-        console.log(challengeid);
-        return axios.get(CHALLENGE_API_BASE_URL + '/' + challengeid);
+    getAssignmentById(assignmentid){
+        console.log(assignmentid);
+        return axios.get(ASSIGNMENT_API_BASE_URL + '/' + "id/" + assignmentid);
+    }
+
+    getAssignmentByStudentId(studentid){
+        return axios.get(ASSIGNMENT_API_BASE_URL  + '/' + studentid)
     }
 }
 
