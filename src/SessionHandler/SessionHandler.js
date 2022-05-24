@@ -1,11 +1,15 @@
 class SessionHandler {
     
     setStudentId(id){
-        sessionStorage.setItem("studentid", "2");
+        sessionStorage.setItem("studentid", id);
     }
 
     getStudentId(){
         return sessionStorage.getItem("studentid");
+    }
+
+    clearStudentId(){
+        return sessionStorage.clear("studentid");
     }
 }
 
