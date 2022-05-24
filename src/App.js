@@ -14,6 +14,7 @@ import FolderUpload from './components/CodeUploadComponents/FolderUploadPage';
 import AssignmentInProgress from './components/AssignmentComponents/AssignmentsInProgress';
 import Login from './components/LoginComponents/Login';
 import SessionHandler from './SessionHandler/SessionHandler';
+import Course from './components/CourseComponents/Course';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
             <Route path='/about' element={<AboutUs/>}/>
             <Route path='/assignment-details' element={<AssignmentDetailPage/>}/>
             <Route path='/studentassignments' element={<AssignmentInProgress/>}/>
+            <Route path='/Course' element={<Course/>}/>
           </Routes>
           <Footer />
         </div>
