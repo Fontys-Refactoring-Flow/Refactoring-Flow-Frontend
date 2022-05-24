@@ -52,16 +52,16 @@ const FolderUpload = () => {
     
     return ( 
         <div className='container'>
-            <p className='title'>Select the repository you want to upload.</p>
+            <p className='title'>Select the file you want to upload.</p>
             <form>
                 <div className='input-group mb-3 file-upload-container'>
                     <input type="file" className='form-control' onChange={OnFileChange}/>
                 </div>
-                <input type='submit' className='button' value='upload' onClick={OnFileUpload} style={{'margin-right': '10px'}}></input>
+                {/* <input type='submit' className='button' value='upload' onClick={OnFileUpload} style={{'margin-right': '10px'}}></input> */}
             </form>
 
             
-            <a href='/edit' className='button' onClick={addFileStringToLocal}>editor</a>
+            <a href='/edit' className='button' onClick={addFileStringToLocal}>open in editor</a>
         </div>
     );
 }
