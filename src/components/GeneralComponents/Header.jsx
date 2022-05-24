@@ -11,14 +11,17 @@ class Header extends Component {
             studentid: 0
         }
     }
-    
 
-    //componentDidMount(){
-    //    this.setState({studentid: SessionHandler.getStudentId()});
-    //}
+    componentDidMount(){
+        this.setState({studentid: SessionHandler.getStudentId()});
+    }
+
+    handleLogout = () => {
+        SessionHandler.clearStudentId();
+    }
 
     render() { 
-        if(this.state.studentid !== 0){
+        if(this.state.studentid !== null){
             return ( 
                 <header className='p-3  text-white' id='header'>
                     <div className='container'>
@@ -39,6 +42,11 @@ class Header extends Component {
                                 </li>
                                 <li>
                                     <Link to='/progress' className='nav-link px-2 text-lightblue'>Progress</Link>
+                                </li>
+                                <li>
+                                    <a className='btn nav-link px-2 text-lightblue' href='/' onClick={this.handleLogout}>
+                                        Logout
+                                    </a>
                                 </li>
                             </ul>
                         </div>

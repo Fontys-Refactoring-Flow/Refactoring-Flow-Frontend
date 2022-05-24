@@ -4,7 +4,8 @@ import '../../style/AssignmentsPage.css'
 import '../../style/Button.css'
 import '../../style/Card.css'
 import '../../style/Image.css'
-import { Link } from 'react-router-dom';
+import StudentService from '../../Services/StudentService'
+import SessionHandler from '../../SessionHandler/SessionHandler'
 
 class Login extends Component {
     constructor(props) {
@@ -12,18 +13,33 @@ class Login extends Component {
 
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            studentid: 0
         }
         this.changeEmailHandler = this.changeEmailHandler.bind(this);
         this.changePasswordHandler = this.changePasswordHandler.bind(this);
     }
 
+    componentDidMount(){
+        SessionHandler.clearStudentId();
+    }
+
     changeEmailHandler = (event) => {
+        event.preventDefault();
         this.setState({ email: event.target.value });
     }
 
     changePasswordHandler = (event) => {
+        event.preventDefault();
         this.setState({ password: event.target.value });
+    }
+
+    handleLogin = () => {
+        StudentService.getLogin(this.state.email, this.state.password).then((res) => {
+            this.setState({ studentid: res.data.id })
+            console.log(this.state.studentid);
+            SessionHandler.setStudentId(this.state.studentid);
+        })
     }
 
     render() {
@@ -39,7 +55,10 @@ class Login extends Component {
                             <label>E-mail address</label>
                             <input placeholder='E-mail address' name='email' className='form-control' value={this.state.email} onChange={this.changeEmailHandler} />
                             <label>Password</label>
-                            <input placeholder='Password' name='password' className='form-control' value={this.state.password} onChange={this.changePasswordHandler} />
+                            <input type="password" placeholder='Password' name='password' className='form-control' value={this.state.password} onChange={this.changePasswordHandler} />
+                            <a className="btn btn-refactoring text-white" onClick={this.handleLogin} href='/' style={{ marginTop: '10px' }}>
+                                Login
+                            </a>
                         </div>
                     </form>
                 </div>
