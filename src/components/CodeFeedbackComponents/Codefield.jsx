@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import '../../style/CodeFeedback.css'
-import LocalStorageManager from '../../Services/LocalStorageManager';
 import CodeService from '../../Services/CodeService';
 
-const Codefield = () => {
+const Codefield = (props) => {
 
     const [code, setCode] = React.useState();
     const [fontsize, setFontsize] = React.useState(14); // default fontsize is 14
@@ -13,10 +12,10 @@ const Codefield = () => {
     // useEffect with a empty array to simulate a componentDidMount method.
     // The code should only be loaded once instead of with every component refresh. 
     useEffect(() => {
-        let uploadedCode = LocalStorageManager.GetUploadedCode();
+        let loadedCode = props.code;
 
-        if(uploadedCode === 'undefined'){
-            uploadedCode = 
+        if(loadedCode === 'undefined'){
+            loadedCode = 
             'public class MyFirstJavaProgram {\n' +
             '    public static void main(String []args) {\n' +
             '        System.out.println("Hello World");\n' +
@@ -24,8 +23,8 @@ const Codefield = () => {
             '}'
         }
 
-        setCode(uploadedCode);
-    }, []);
+        setCode(loadedCode);
+    }, [props]);
 
 
     return(
