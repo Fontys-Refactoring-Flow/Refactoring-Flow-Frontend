@@ -6,7 +6,7 @@ import CodeService from '../../Services/CodeService';
 
 const Codefield = () => {
 
-    const [code, setCode] = React.useState(); // default is the uploaded code
+    const [code, setCode] = React.useState();
     const [fontsize, setFontsize] = React.useState(14); // default fontsize is 14
 
 
