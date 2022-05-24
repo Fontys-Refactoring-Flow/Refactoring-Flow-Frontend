@@ -40,6 +40,7 @@ function App() {
           <Header />
           <Routes>
             <Route path='/' element={<HomePage/>}/>
+            <Route path='/Course' element={<Course/>}/>
             <Route path='/assignments' element={<AssignmentsPage/>}/>
             <Route path='/upload' element={<UploadMethodList/>}/>
             <Route path='/upload/github' element={<GitUpload gitPlatform='GitHub'/>}/>
@@ -50,7 +51,7 @@ function App() {
             <Route path='/about' element={<AboutUs/>}/>
             <Route path='/assignment-details' element={<AssignmentDetailPage/>}/>
             <Route path='/studentassignments' element={<AssignmentInProgress/>}/>
-            <Route path='/Course' element={<Course/>}/>
+            
           </Routes>
           <Footer />
         </div>
