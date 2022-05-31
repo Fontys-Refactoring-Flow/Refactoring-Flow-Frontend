@@ -25,7 +25,7 @@ class AssignmentsPage extends Component {
 
     render() {
         return (
-            <div className='card-container'>
+            <div className='card-container container'>
                 {
                     this.state.assignment.map(
                         assignment =>
