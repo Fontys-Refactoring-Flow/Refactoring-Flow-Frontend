@@ -9,8 +9,6 @@ const Codefield = (props) => {
     const [fontsize, setFontsize] = React.useState(14); // default fontsize is 14
 
 
-    // useEffect with a empty array to simulate a componentDidMount method.
-    // The code should only be loaded once instead of with every component refresh. 
     useEffect(() => {
         let loadedCode = props.code;
 
