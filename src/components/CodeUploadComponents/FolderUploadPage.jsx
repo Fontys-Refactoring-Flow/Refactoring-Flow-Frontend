@@ -1,4 +1,5 @@
 import React from 'react';
+import CodeService from '../../Services/CodeService';
 import LocalStorageManager from '../../Services/LocalStorageManager';
 import '../../style/Main.css';
 
@@ -39,16 +40,13 @@ const FolderUpload = () => {
         // add the code to local storage to transfer it to the editor.
     }
 
-    function OnFileUpload(){
-        const formData = new FormData();
-        formData.append(
-            'myFile',
-            selectedFile,
-            selectedFile.name
-        );
+    // function OnFileUpload(){
+    //     const formData = new FormData();
+    //     formData.append('fileStr', fileString);
 
-        // TODO: proceed to upload the file to the database.
-    }
+    //     CodeService.PostCode(formData.get());
+    //     // TODO: proceed to upload the file to the database.
+    // }
     
     return ( 
         <div className='container'>
