@@ -10,8 +10,10 @@ class CodeService {
 
     PostCode(string){
         let codeByteArr = this.EncodeString(string);
-        let myBlob = new Blob(codeByteArr, {type: 'application/json'});
+        let myBlob = new Blob(codeByteArr, {type: 'text/x-java-source'});
         console.log(myBlob.text());
+
+        // todo: transform to formdata before upload
         
         try{
             axios.post('http://localhost:8080/api/v1/CodeFile', myBlob);

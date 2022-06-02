@@ -3,7 +3,8 @@ class LocalStorageManager {
     CodeKey = 'uploadCode';
 
     GetUploadedCode(){
-        return localStorage.getItem(this.CodeKey);
+        let code =  localStorage.getItem(this.CodeKey);
+        return code;
     }
 
     GetAndClearUploadedCode(){
