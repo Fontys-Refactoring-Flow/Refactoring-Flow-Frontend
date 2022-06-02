@@ -11,15 +11,22 @@ class AssignmentsPage extends Component {
 
 
         this.state = {
-            assignment: []
+            assignment: [],
+            hasError: false
         }
     }
+
+    static getDeraived
 
     componentDidMount() {
         AssignmentService.getAssignments().then((res) => {
             console.log(res)
             this.setState({ assignment: res.data });
         })
+    }
+
+    componentDidCatch(error, info){
+
     }
 
 

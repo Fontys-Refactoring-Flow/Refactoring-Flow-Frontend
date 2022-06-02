@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import LoginImage from "../../Images/LoginImage.png"
 import '../../style/AssignmentsPage.css'
 import '../../style/Button.css'
@@ -11,17 +11,9 @@ function Login() {
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-    const [route, setRoute] = useState();
-    const [errorMessage, setErrorMessage] = useState();
 
     useEffect(() => {
         SessionHandler.clearStudentId();
-        if(SessionHandler.getLoginAttempts >= 1){
-            setErrorMessage("Wrong E-mail or Password, please try again")
-        }
-        else{
-            setErrorMessage("");
-        }
     })
 
     function changeEmailHandler(event){
@@ -38,14 +30,12 @@ function Login() {
         StudentService.getLogin(email, password).then((res) => {
             console.log(res.data.id);
             if(res.data.id === undefined){
-                SessionHandler.setLoginAttemps();
-                //setRoute("/login");
+                window.alert("Wrong E-mail or password. Please try again")
             }
             else
             {
                 SessionHandler.setStudentId(res.data.id);
-                SessionHandler.clearLoginAttemps();
-                //setRoute("/")
+                window.location.assign("http://localhost:3000");
             }
         })
     }
@@ -59,7 +49,6 @@ function Login() {
                 <form>
                     <div className='form-group'>
                         <h5>Login</h5>
-                        <h8>{errorMessage}</h8>
                         <label>E-mail address</label>
                         <input placeholder='E-mail address' name='email' className='form-control' value={email} onChange={changeEmailHandler} />
                         <label>Password</label>
