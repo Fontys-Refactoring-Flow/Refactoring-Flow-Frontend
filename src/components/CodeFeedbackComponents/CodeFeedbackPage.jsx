@@ -3,6 +3,7 @@ import FeedbackBubble from './FeedbackBubble';
 import '../../style/CodeFeedback.css'
 import Codefield from './Codefield';
 import LocalStorageManager from '../../Services/LocalStorageManager';
+import StepBubble from './StepBubble';
 
 
 const CodeFeedbackPage = () => {
@@ -21,7 +22,8 @@ const CodeFeedbackPage = () => {
             </div>
 
             <div className='feedback-container'>
-                <FeedbackBubble text='feedback'/>
+                {/* <FeedbackBubble text='feedback'/> */}
+                <StepBubble title='titleeee' description='descrrrr'/>
             </div>
         </div>
     );
