@@ -10,7 +10,6 @@ const CodeFeedbackPage = () => {
     let code = null;
 
     useEffect(() => {
-        // code = LocalStorageManager.GetAndClearUploadedCode();
         code = LocalStorageManager.GetUploadedCode();
         console.log(code);
     }, []);
