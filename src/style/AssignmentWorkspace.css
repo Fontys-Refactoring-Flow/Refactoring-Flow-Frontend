@@ -1,0 +1,38 @@
+.assignment-container {
+    display: flex;
+    margin-top: 3%;
+}
+
+.steps-container {
+    margin-left: 5%;
+    margin-bottom: 5%;
+    width: 20%;
+}
+
+.code-field {
+    width: 70%;
+}
+
+.step-acordion {
+    background-color: rgb(255, 238, 255);
+    border-color: rgb(203, 190, 203);
+}
+
+.editor-container {
+    background-color: rgb(58, 57, 59);
+    border-radius: 15px;
+    padding: 10px;
+    min-height: 500px;
+    margin-bottom: 10%;
+}
+
+.font-btn {
+    background-color: rgb(73, 70, 77);
+    color: rgb(196, 181, 196);
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.font-btn:hover{
+    background-color: rgb(101, 94, 109);
+}

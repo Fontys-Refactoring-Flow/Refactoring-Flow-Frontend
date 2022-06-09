@@ -16,6 +16,7 @@ import Login from './components/LoginComponents/Login';
 import SessionHandler from './SessionHandler/SessionHandler';
 import Course from './components/CourseComponents/Course';
 import CodeFeedbackPage from './components/CodeFeedbackComponents/CodeFeedbackPage';
+import AssignmentWorkspace from './components/AssignmentComponents/AssignmentWorkspace';
 
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
             <Route path='/about' element={<AboutUs/>}/>
             <Route path='/assignment-details' element={<AssignmentDetailPage/>}/>
             <Route path='/studentassignments' element={<AssignmentInProgress/>}/>
+            <Route path='/assignment/:codeId' element={<AssignmentWorkspace/>}/>
             <Route path='/edit' element={<CodeFeedbackPage/>} />
             
           </Routes>
