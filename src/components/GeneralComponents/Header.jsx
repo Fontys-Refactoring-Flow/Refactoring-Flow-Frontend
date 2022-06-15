@@ -18,6 +18,7 @@ class Header extends Component {
 
     handleLogout = () => {
         SessionHandler.clearStudentId();
+        window.alert("Are you sure you want to log out?")
     }
 
     render() { 
