@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import FeedbackBubble from './FeedbackBubble';
 import '../../style/CodeFeedback.css'
 import Codefield from './Codefield';
 import LocalStorageManager from '../../Services/LocalStorageManager';
+import FeedbackBubble from './FeedbackBubble';
 
 
 const CodeFeedbackPage = () => {
@@ -10,7 +10,6 @@ const CodeFeedbackPage = () => {
     let code = null;
 
     useEffect(() => {
-        // code = LocalStorageManager.GetAndClearUploadedCode();
         code = LocalStorageManager.GetUploadedCode();
         console.log(code);
     }, []);

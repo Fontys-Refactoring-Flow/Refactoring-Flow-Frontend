@@ -8,6 +8,16 @@ class CodeService {
         return encodedString;
     }
 
+    GetCodeById(id){
+        try{
+            return axios.get('http://localhost:8080/api/v1/CodeFile/' + id);
+        }
+        catch(ex){
+            console.error(ex);
+            return null;
+        }
+    }
+
     PostCode(string){
         let codeByteArr = this.EncodeString(string);
         let myBlob = new Blob(codeByteArr, {type: 'text/x-java-source'});
