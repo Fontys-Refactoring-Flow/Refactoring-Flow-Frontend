@@ -35,15 +35,15 @@ class Header extends Component {
                                 <li>
                                     <Link to='/assignments' className='nav-link px-2 text-lightblue'>Assignments</Link>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <Link to='/studentassignments' className='nav-link px-2 text-lightblue'>Assignments in progress</Link>
-                                </li>
+                                </li> */}
                                 <li>
                                     <Link to='/upload' className='nav-link px-2 text-lightblue'>Upload project</Link>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <Link to='/progress' className='nav-link px-2 text-lightblue'>Progress</Link>
-                                </li>
+                                </li> */}
                                 <li>
                                     <a className='btn nav-link px-2 text-lightblue' href='/' onClick={this.handleLogout}>
                                         Logout

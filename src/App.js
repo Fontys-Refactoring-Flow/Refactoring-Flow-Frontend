@@ -49,9 +49,9 @@ function App() {
             <Route path='/upload/gitlab' element={<GitUpload gitPlatform='GitLab'/>}/>
             <Route path='/upload/folder' element={<FolderUpload/>}/>
             <Route path='/upload' element={<UploadProjectPage/>}/>
-            <Route path='/progress' element={<ProgressPage/>}/>
+            {/* <Route path='/progress' element={<ProgressPage/>}/> */}
             <Route path='/about' element={<AboutUs/>}/>
-            <Route path='/assignment-details' element={<AssignmentDetailPage/>}/>
+            {/* <Route path='/assignment-details' element={<AssignmentDetailPage/>}/> */}
             <Route path='/studentassignments' element={<AssignmentInProgress/>}/>
             <Route path='/assignment/:codeId' element={<AssignmentWorkspace/>}/>
             <Route path='/edit' element={<CodeFeedbackPage/>} />
