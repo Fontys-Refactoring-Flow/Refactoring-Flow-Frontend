@@ -4,8 +4,9 @@ import '../../style/AssignmentsPage.css'
 import '../../style/Button.css'
 import '../../style/Card.css'
 import '../../style/Image.css'
-import StudentService from '../../Services/StudentService'
+import UserService from '../../Services/UserService'
 import SessionHandler from '../../SessionHandler/SessionHandler'
+import StudentService from '../../Services/StudentService'
 
 function Login() {
 
@@ -28,7 +29,7 @@ function Login() {
 
     function handleLogin(){
         StudentService.getLogin(email, password).then((res) => {
-            console.log(res.data.id);
+            console.log(res.data);
             if(res.data.id === undefined){
                 window.alert("Wrong E-mail or password. Please try again")
             }
