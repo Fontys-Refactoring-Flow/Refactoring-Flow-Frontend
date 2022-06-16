@@ -53,7 +53,7 @@ class AssignmentsPage extends Component {
                                             {/* <button class="btn btn-refactoring text-white" data-bs-toggle="collapse" data-bs-target={"#collapseExample" + assignment.id} aria-expanded="false" aria-controls="collapseExample">
                                                 Show more info
                                             </button> */}
-                                            <Link to='/assignment-details' className='btn btn-refactoring text-white' role="button" id={assignment.id}>Select challenge</Link>
+                                            <Link to='/assignment/1'  className='btn btn-refactoring text-white' role="button" id={assignment.id}>Select challenge</Link>
                                         </div>
                                     </div>
                                 </div>
