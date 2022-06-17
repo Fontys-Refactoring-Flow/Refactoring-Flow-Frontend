@@ -29,7 +29,7 @@ const Codefield = (props) => {
         <div className='editor-container'>
             <button onClick={() => setFontsize(fontsize + 2)} className='font-btn btn'>plus</button>
             <button onClick={() => setFontsize(fontsize - 2)} className='font-btn btn'>min</button>
-            <button onClick={() => CodeService.PostCode(code)} className='font-btn btn'>save file</button>
+            {/* <button onClick={() => CodeService.PostCode(code)} className='font-btn btn'>save file</button> */}
             <CodeEditor
                 value={code}
                 language='java'

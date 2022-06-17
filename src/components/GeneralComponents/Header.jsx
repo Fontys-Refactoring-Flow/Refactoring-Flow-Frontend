@@ -42,6 +42,9 @@ class Header extends Component {
                                     <Link to='/upload' className='nav-link px-2 text-lightblue'>Upload project</Link>
                                 </li>
                                 {/* <li>
+                                    <Link to='/learning_outcomes' className='nav-link px-2 text-lightblue'>Learning outcomes</Link>
+                                </li> */}
+                                {/* <li>
                                     <Link to='/progress' className='nav-link px-2 text-lightblue'>Progress</Link>
                                 </li> */}
                                 <li>

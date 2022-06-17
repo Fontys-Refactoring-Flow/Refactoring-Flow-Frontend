@@ -23,8 +23,8 @@ const HomePage = () => {
         <p className= 'text'>
 	        Performance engineering can remove inefficiencies in programs, known as software bloat, arising from traditional software-development strategies that aim to minimize an application's development time rather than the time it takes to run. Performance engineering can also tailor software to the hardware on which it runs, for example, to take advantage of parallel processors and vector units.
         </p>
-        <p className='title2'>Our application</p>
-        <p className='text-last'>Placeholder text</p>
+        {/* <p className='title2'>Our application</p>
+        <p className='text-last'>Placeholder text</p> */}
     </div>
   )
 }
