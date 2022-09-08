@@ -1,70 +1,154 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Issues][issues-shield]][issues-url]
 
-## Available Scripts
+<br />
+<div align="center">
+  <h3 align="center">Refactoring Flow Frontend</h3>
 
-In the project directory, you can run:
+  <p align="center">
+    The official frontend repository for the Refactoring Flow project.
+    <br />
+    <br />
+	<a href="https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend//issues">Request Feature</a>
+  </p>
+</div>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Built With
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Here's a list of the major frameworks used in our project.
 
-### `npm run eject`
+* [![React.js][React.js]][React-url]
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- GETTING STARTED -->
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+In this section we will discuss the steps which need to be made in order to run the project for the first time.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Prerequisites
 
-## Learn More
+_This  list shows the prerequisites needed to run the project._
+* node.js
+* npm
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+_Below is an instruction on how to install the project for it's first time run._
 
-### Code Splitting
+1. Fork / clone the repo
+   ```sh
+   git clone https://github.com/IemandDieAbeHeet/Refactoring-Flow-Frontend.git
+   ```
+2. Install dependencies
+   ```sh
+   npm i
+   ```
+4. Run project
+   ```sh
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Analyzing the Bundle Size
+<!-- ROADMAP -->
+## Roadmap
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [ ] Implement JWT tokens
+- [ ] Import code from Git repository
+- [ ] Give teacher ability to give feedback to students
+- [ ] Make the student be able to see the feedback given by the teacher. 
 
-### Making a Progressive Web App
+See the [open issues](https://github.com/orgs/Fontys-Refactoring-Flow/issues) for a full list of proposed features (and known issues).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Advanced Configuration
+<!-- CONTRIBUTING -->
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-### Deployment
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/NewFeature`)
+3. Commit your Changes (`git commit -m 'Add some feature'`)
+4. Push to the Branch (`git push origin feature/NewFeature`)
+5. Open a Pull Request
 
-### `npm run build` fails to minify
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE.md` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Project Link: [https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend](https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend.svg?style=for-the-badge
+[contributors-url]: https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend.svg?style=for-the-badge
+[forks-url]: https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend/network/members
+[stars-shield]: https://img.shields.io/github/stars/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend?style=for-the-badge
+[stars-url]: https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend?style=for-the-badge
+[issues-url]: https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend/issues
+[license-shield]: https://img.shields.io/github/license/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend?style=for-the-badge
+[license-url]: https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend/blob/master/LICENSE.MD
+[product-screenshot]: images/screenshot.png
+[Spring]: https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white
+[Spring-url]: https://spring.io/
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
