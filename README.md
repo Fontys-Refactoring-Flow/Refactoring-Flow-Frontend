@@ -76,7 +76,7 @@ _Below is an instruction on how to install the project for it's first time run._
 
 1. Fork / clone the repo
    ```sh
-   git clone https://github.com/IemandDieAbeHeet/Refactoring-Flow-Frontend.git
+   git clone https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend.git
    ```
 2. Install dependencies
    ```sh
@@ -97,7 +97,7 @@ _Below is an instruction on how to install the project for it's first time run._
 - [ ] Give teacher ability to give feedback to students
 - [ ] Make the student be able to see the feedback given by the teacher. 
 
-See the [open issues](https://github.com/orgs/Fontys-Refactoring-Flow/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
