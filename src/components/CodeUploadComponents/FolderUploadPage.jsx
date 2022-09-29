@@ -1,4 +1,5 @@
 import React from 'react';
+import CodeService from '../../Services/CodeService';
 import LocalStorageManager from '../../Services/LocalStorageManager';
 import '../../style/Main.css';
 
@@ -39,26 +40,26 @@ const FolderUpload = () => {
         // add the code to local storage to transfer it to the editor.
     }
 
-    function OnFileUpload(){
-        const formData = new FormData();
-        formData.append(
-            'myFile',
-            selectedFile,
-            selectedFile.name
-        );
+    // function OnFileUpload(){
+    //     const formData = new FormData();
+    //     formData.append('fileStr', fileString);
 
-        // TODO: proceed to upload the file to the database.
-    }
+    //     CodeService.PostCode(formData.get());
+    //     // TODO: proceed to upload the file to the database.
+    // }
     
     return ( 
         <div className='container'>
-            <p className='title'>Select the repository you want to upload.</p>
-            <div className='input-group mb-3 file-upload-container'>
-                <input type="file" className='form-control' onChange={OnFileChange}/>
-            </div>
-            <button className='button' onClick={OnFileUpload} style={{'margin-right': '10px'}}>upload</button>
+            <p className='title'>Select the file you want to upload.</p>
+            <form>
+                <div className='input-group mb-3 file-upload-container'>
+                    <input type="file" className='form-control' onChange={OnFileChange}/>
+                </div>
+                {/* <input type='submit' className='button' value='upload' onClick={OnFileUpload} style={{'margin-right': '10px'}}></input> */}
+            </form>
+
             
-            <a href='/edit' className='button' onClick={addFileStringToLocal}>editor</a>
+            <a href='/edit' className='button' onClick={addFileStringToLocal}>open in editor</a>
         </div>
     );
 }

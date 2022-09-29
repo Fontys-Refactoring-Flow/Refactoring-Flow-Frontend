@@ -1,22 +1,19 @@
 import React, { useEffect } from 'react';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import '../../style/CodeFeedback.css'
-import LocalStorageManager from '../../Services/LocalStorageManager';
 import CodeService from '../../Services/CodeService';
 
-const Codefield = () => {
+const Codefield = (props) => {
 
-    const [code, setCode] = React.useState(); // default is the uploaded code
+    const [code, setCode] = React.useState();
     const [fontsize, setFontsize] = React.useState(14); // default fontsize is 14
 
 
-    // useEffect with a empty array to simulate a componentDidMount method.
-    // The code should only be loaded once instead of with every component refresh. 
     useEffect(() => {
-        let uploadedCode = LocalStorageManager.GetUploadedCode();
+        let loadedCode = props.code;
 
-        if(uploadedCode === 'undefined'){
-            uploadedCode = 
+        if(loadedCode === 'undefined'){
+            loadedCode = 
             'public class MyFirstJavaProgram {\n' +
             '    public static void main(String []args) {\n' +
             '        System.out.println("Hello World");\n' +
@@ -24,15 +21,15 @@ const Codefield = () => {
             '}'
         }
 
-        setCode(uploadedCode);
-    }, []);
+        setCode(loadedCode);
+    }, [props]);
 
 
     return(
         <div className='editor-container'>
             <button onClick={() => setFontsize(fontsize + 2)} className='font-btn btn'>plus</button>
             <button onClick={() => setFontsize(fontsize - 2)} className='font-btn btn'>min</button>
-            <button onClick={() => CodeService.PostCode(code)} className='font-btn btn'>save file</button>
+            {/* <button onClick={() => CodeService.PostCode(code)} className='font-btn btn'>save file</button> */}
             <CodeEditor
                 value={code}
                 language='java'

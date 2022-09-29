@@ -17,6 +17,10 @@ h3 {
     margin-right: 10%;
 }
 
+.button-container{
+    font-family: monospace;
+}
+
 .text-container {
     margin: 50px;
     margin-left: 300px;
@@ -25,3 +29,13 @@ h3 {
 .about-text {
     grid-column: 2;
 }
+
+.cards{
+ display: flex;
+ flex: 0 0 33.333%;
+ padding: 10px;
+ padding-left: 0px;
+ padding-right: 36px;
+}
+
+

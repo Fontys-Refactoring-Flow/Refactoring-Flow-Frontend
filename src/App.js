@@ -13,37 +13,56 @@ import GitUpload from './components/CodeUploadComponents/GitUploadPage';
 import FolderUpload from './components/CodeUploadComponents/FolderUploadPage';
 import AssignmentInProgress from './components/AssignmentComponents/AssignmentsInProgress';
 import Login from './components/LoginComponents/Login';
+import SessionHandler from './SessionHandler/SessionHandler';
+import Course from './components/CourseComponents/Course';
 import CodeFeedbackPage from './components/CodeFeedbackComponents/CodeFeedbackPage';
+import AssignmentWorkspace from './components/AssignmentComponents/AssignmentWorkspace';
 import LearningOutcomes from './components/AssignmentComponents/LearningOutcomes';
 
 
 function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path='/' element={<HomePage/>}/>
-          <Route path='/assignments' element={<AssignmentsPage/>}/>
-          <Route path='/upload' element={<UploadMethodList/>}/>
-          <Route path='/upload/github' element={<GitUpload gitPlatform='GitHub'/>}/>
-          <Route path='/upload/gitlab' element={<GitUpload gitPlatform='GitLab'/>}/>
-          <Route path='/upload/folder' element={<FolderUpload/>}/>
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/learningOutcomes' element={<LearningOutcomes/>}/>
-
-          <Route path='/edit' element={<CodeFeedbackPage/>}/>
-          
-          <Route path='/upload' element={<UploadProjectPage/>}/>
-          <Route path='/progress' element={<ProgressPage/>}/>
-          <Route path='/about' element={<AboutUs/>}/>
-          <Route path='/assignment-details' element={<AssignmentDetailPage/>}/>
-          <Route path='/studentassignments' element={<AssignmentInProgress/>}/>
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
-  );
+  if(SessionHandler.getStudentId() == null){
+    return (
+      <Router>
+        <div className="App">
+          <Header />
+          <Routes>
+            <Route path='/' element={<HomePage/>}/>
+            <Route path='/login' element={<Login/>}/>
+            <Route path='/about' element={<AboutUs/>}/>
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    );
+  }
+  else{
+    return (
+      <Router>
+        <div className="App">
+          <Header />
+          <Routes>
+            <Route path='/' element={<HomePage/>}/>
+            <Route path='/Course' element={<Course/>}/>
+            <Route path='/assignments' element={<AssignmentsPage/>}/>
+            <Route path='/upload' element={<UploadMethodList/>}/>
+            <Route path='/upload/github' element={<GitUpload gitPlatform='GitHub'/>}/>
+            <Route path='/upload/gitlab' element={<GitUpload gitPlatform='GitLab'/>}/>
+            <Route path='/upload/folder' element={<FolderUpload/>}/>
+            <Route path='/upload' element={<UploadProjectPage/>}/>
+            {/* <Route path='/progress' element={<ProgressPage/>}/> */}
+            <Route path='/about' element={<AboutUs/>}/>
+            {/* <Route path='/assignment-details' element={<AssignmentDetailPage/>}/> */}
+            <Route path='/studentassignments' element={<AssignmentInProgress/>}/>
+            <Route path='/assignment/:codeId' element={<AssignmentWorkspace/>}/>
+            <Route path='/edit' element={<CodeFeedbackPage/>} />
+            {/* <Route path='/learning_outcomes' element={<LearningOutcomes/>}/> */}
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;

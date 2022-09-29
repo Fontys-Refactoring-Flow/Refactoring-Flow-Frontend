@@ -11,14 +11,18 @@ class Header extends Component {
             studentid: 0
         }
     }
-    
 
-    //componentDidMount(){
-    //    this.setState({studentid: SessionHandler.getStudentId()});
-    //}
+    componentDidMount(){
+        this.setState({studentid: SessionHandler.getStudentId()});
+    }
+
+    handleLogout = () => {
+        SessionHandler.clearStudentId();
+        window.alert("Are you sure you want to log out?")
+    }
 
     render() { 
-        if(this.state.studentid !== 0){
+        if(this.state.studentid !== null){
             return ( 
                 <header className='p-3  text-white' id='header'>
                     <div className='container'>
@@ -31,14 +35,22 @@ class Header extends Component {
                                 <li>
                                     <Link to='/assignments' className='nav-link px-2 text-lightblue'>Assignments</Link>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <Link to='/studentassignments' className='nav-link px-2 text-lightblue'>Assignments in progress</Link>
-                                </li>
+                                </li> */}
                                 <li>
                                     <Link to='/upload' className='nav-link px-2 text-lightblue'>Upload project</Link>
                                 </li>
-                                <li>
+                                {/* <li>
+                                    <Link to='/learning_outcomes' className='nav-link px-2 text-lightblue'>Learning outcomes</Link>
+                                </li> */}
+                                {/* <li>
                                     <Link to='/progress' className='nav-link px-2 text-lightblue'>Progress</Link>
+                                </li> */}
+                                <li>
+                                    <a className='btn nav-link px-2 text-lightblue' href='/' onClick={this.handleLogout}>
+                                        Logout
+                                    </a>
                                 </li>
                             </ul>
                         </div>
