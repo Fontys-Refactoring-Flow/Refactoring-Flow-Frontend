@@ -1,16 +1,23 @@
 .upload-card {
-    height: 50%;
-    width: 20%;
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-top: 1.5%;
-    margin-bottom: 1.5%;
+    flex: 0 0 100%;
 }
 
+.card-wrap{
+  flex: 0 0 33.333%;
+  display: flex;
+  padding: 10px;
+}
+
+.card-wrap:first-child{
+    padding-left: 0px;
+}
+
+.card-wrap:last-child{
+    padding-right: 0px;
+}
 
 .card-container {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
 }
 

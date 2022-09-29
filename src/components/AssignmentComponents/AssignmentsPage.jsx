@@ -14,24 +14,25 @@ class AssignmentsPage extends Component {
             assignment: [],
         }
     }
-
+    
     componentDidMount() {
         AssignmentService.getAssignments().then((res) => {
             console.log(res)
             this.setState({ assignment: res.data });
         })
     }
-
-
-
+     
     render() {
         return (
-            <div className='card-container container'>
+            <div className='container'>
+            <p class='title'>Select an assignment</p>
+            <div className='card-container'>
                 {
                     this.state.assignment.map(
                         assignment =>
                             <tr key={assignment.id}>
-                                <div className='card' style={{ width: '18rem', minHeight: '300px', margin: '10px' }}>
+                                <div className='cards'>
+                                <div className='card' style={{ width: '18rem', minHeight: '300px'}}>
                                     <div className="card-body">
                                         <h5 className="card-title">{assignment.refactoringType}</h5>
                                         <p className="card-text">{"Refactoring level: "}{assignment.level}</p>
@@ -57,11 +58,14 @@ class AssignmentsPage extends Component {
                                         </div>
                                     </div>
                                 </div>
+                                </div>
                             </tr>
                     )
                 }
             </div>
+            </div>
         );
+        
     }
 }
 
