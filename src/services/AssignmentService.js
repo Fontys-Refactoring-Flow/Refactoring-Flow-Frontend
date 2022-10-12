@@ -13,8 +13,8 @@ class AssignmentService{
         return axios.get(ASSIGNMENT_API_BASE_URL + '/' + "id/" + assignmentid);
     }
 
-    getAssignmentByStudentId(studentid){
-        return axios.get(ASSIGNMENT_API_BASE_URL  + '/' + studentid)
+    getAssignmentByStudentId(studentId){
+        return axios.get(ASSIGNMENT_API_BASE_URL  + '/findByStudentId/' + studentId)
     }
 }
 

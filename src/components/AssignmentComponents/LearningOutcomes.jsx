@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LearningOutcomesService from '../../Services/LearningOutcomesService';
+import LearningOutcomesService from '../../services/LearningOutcomesService';
 
 class LearningOutcomes extends Component {
     constructor(props) {

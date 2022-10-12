@@ -1,21 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import LoginImage from "../../Images/LoginImage.png"
 import '../../style/AssignmentsPage.css'
 import '../../style/Button.css'
 import '../../style/Card.css'
 import '../../style/Image.css'
-import UserService from '../../Services/UserService'
-import SessionHandler from '../../SessionHandler/SessionHandler'
-import StudentService from '../../Services/StudentService'
+import AuthContext from "../context/AuthContext";
+import {useNavigate} from "react-router-dom";
 
 function Login() {
-
+    const auth = useContext(AuthContext)
+    const navigate = useNavigate()
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-
-    useEffect(() => {
-        SessionHandler.clearStudentId();
-    })
 
     function changeEmailHandler(event){
         event.preventDefault();
@@ -28,16 +24,8 @@ function Login() {
     }
 
     function handleLogin(){
-        StudentService.getLogin(email, password).then((res) => {
-            console.log(res.data);
-            if(res.data.id === undefined){
-                window.alert("Wrong E-mail or password. Please try again")
-            }
-            else
-            {
-                SessionHandler.setStudentId(res.data.id);
-                window.location.assign("http://localhost:3000");
-            }
+        auth.login(email, password).then(() => {
+            navigate("/")
         })
     }
 

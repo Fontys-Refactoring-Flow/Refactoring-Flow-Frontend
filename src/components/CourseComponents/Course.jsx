@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ProgressBar from '../GeneralComponents/ProgressBar.jsx';
 import '../../style/Main.css'
-import SegmentService from '../../Services/SegmentService';
+import SegmentService from '../../services/SegmentService';
 
 
 class Course extends Component {
