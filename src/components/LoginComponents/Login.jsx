@@ -4,7 +4,6 @@ import '../../style/AssignmentsPage.css'
 import '../../style/Button.css'
 import '../../style/Card.css'
 import '../../style/Image.css'
-import SessionHandler from '../../SessionHandler/SessionHandler'
 import AuthContext from "../context/AuthContext";
 import {useNavigate} from "react-router-dom";
 
@@ -13,10 +12,6 @@ function Login() {
     const navigate = useNavigate()
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-
-    useEffect(() => {
-        SessionHandler.clearStudentId();
-    })
 
     function changeEmailHandler(event){
         event.preventDefault();

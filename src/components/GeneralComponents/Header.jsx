@@ -1,24 +1,18 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../../style/Header.css'
 import { Link } from 'react-router-dom'
-import SessionHandler from '../../SessionHandler/SessionHandler';
 import {useAuth} from "../context/AuthContext";
 
 const Header = (props) => {
     const auth = useAuth()
-    const [studentId, setStudentId] = useState("")
-
-    useEffect(() => {
-        setStudentId(auth)
-    }, [auth])
 
     const handleLogout = () => {
         auth.logout()
-        SessionHandler.clearStudentId();
-        window.alert("Are you sure you want to log out?")
     }
 
-    if (studentId !== "") {
+    let student
+    try { student = JSON.parse(auth.student) } catch (err) {}
+    if (student != null && student.id !== null) {
         return (
             <header className='p-3  text-white' id='header'>
                 <div className='container'>

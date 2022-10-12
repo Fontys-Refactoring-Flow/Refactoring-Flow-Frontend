@@ -1,16 +1,13 @@
 import {createContext, useContext, useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import {axiosInstance, axiosInstancePublic} from "../../services/axios.service";
-import SessionHandler from "../../SessionHandler/SessionHandler";
 
 const AuthContext = createContext(null)
-const useAuth = () => {
+export default AuthContext
+
+export const useAuth = () => {
     return useContext(AuthContext)
 }
-
-export {useAuth}
-
-export default AuthContext;
 
 export const AuthProvider = ({children}) => {
     const navigate = useNavigate()
@@ -18,7 +15,7 @@ export const AuthProvider = ({children}) => {
     let [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        setStudent(sessionStorage.getItem("user") || "")
+        setStudent(sessionStorage.getItem("student") || "")
         const interval = setInterval(() => {
             if(student === "" || student === "{}") return
             refresh(JSON.parse(student).refreshToken).catch(() => {
@@ -30,18 +27,18 @@ export const AuthProvider = ({children}) => {
     }, [student, navigate])
 
     const hasAdminAuth = () => {
-        return hasAuth("ADMIN")
+        return hasRole("ADMIN")
     }
 
-    const hasUserAuth = () => {
-        return hasAuth("USER")
+    const hasStudentAuth = () => {
+        return hasRole("STUDENT")
     }
 
-    const hasAuth = (auth) => {
+    const hasRole = (auth) => {
         if(student === "" || student === "{}") return false;
         try {
             const authorities = JSON.parse(student).authorities
-            return authorities.includes(auth)
+            return authorities.includes("ROLE_" + auth)
         } catch(e) {
             return false
         }
@@ -65,8 +62,7 @@ export const AuthProvider = ({children}) => {
             })
             .then((res) => {
                 if(res.data.accessToken) {
-                    sessionStorage.setItem("user", JSON.stringify(res.data))
-                    SessionHandler.setStudentId(res.data.id)
+                    sessionStorage.setItem("student", JSON.stringify(res.data))
                     setStudent(res.data)
                 }
                 setLoading(false)
@@ -81,11 +77,11 @@ export const AuthProvider = ({children}) => {
             })
             .then((res) => {
                 if(res.data.accessToken && res.data.refreshToken) {
-                    let user = JSON.parse(sessionStorage.getItem("user") || '{}')
+                    let user = JSON.parse(sessionStorage.getItem("student") || '{}')
                     if(user.accessToken && user.refreshToken) {
                         user.accessToken = res.data.accessToken
                         user.refreshToken = res.data.refreshToken
-                        sessionStorage.setItem("user", JSON.stringify(user))
+                        sessionStorage.setItem("student", JSON.stringify(user))
                         setStudent(JSON.stringify(user))
                     }
                 }
@@ -118,27 +114,27 @@ export const AuthProvider = ({children}) => {
     const logout = () => {
         setLoading(true);
         setStudent("");
-        sessionStorage.removeItem('user')
-        navigate("/")
+        sessionStorage.removeItem("student")
         setLoading(false);
+        return navigate("/login")
     }
 
     let contextData = {
-        user: student,
-        setUser: setStudent,
+        student,
+        setStudent,
         login,
         refresh,
         register,
         logout,
-        hasAuth,
+        hasAuth: hasRole,
         hasAdminAuth,
-        hasUserAuth,
+        hasStudentAuth,
         loading
     }
 
     axiosInstance.interceptors.request.use(
         async config => {
-            const keys = JSON.parse(sessionStorage.getItem('user') || '{}')
+            const keys = JSON.parse(sessionStorage.getItem('student') || '{}')
             if(!keys.accessToken || !keys.refreshToken) navigate("/login")
             config.headers.Authorization = `${keys.tokenType} ${keys.accessToken}`
             return config;
@@ -155,7 +151,7 @@ export const AuthProvider = ({children}) => {
         const originalRequest = error.config;
         if (error.response.status === 401 && !originalRequest._retry && originalRequest.url !== "refresh") {
             originalRequest._retry = true;
-            const user = JSON.parse(sessionStorage.getItem('user') || '{}')
+            const user = JSON.parse(sessionStorage.getItem('student') || '{}')
             refresh(user.refreshToken).then((token) => {
                 axiosInstance.defaults.headers.common['Authorization'] = `${user.tokenType} ${token}`;
                 return axiosInstance.request(originalRequest);
