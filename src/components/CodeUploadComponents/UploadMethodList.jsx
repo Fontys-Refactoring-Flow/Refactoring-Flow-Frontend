@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import UploadMethodCard from './UploadMethodCard';
 import Card from '../GeneralComponents/Card';
 import '../../style/Home.css';
 import FolderImage from '../../Images/Folder.png'
@@ -11,7 +10,7 @@ class UploadMethodList extends Component {
     render() { 
         return ( 
             <div className='container'>
-                <p class='title'>Select a method to upload your code.</p>
+                <p className='title'>Select a method to upload your code.</p>
 
                 <div className='card-container'>
                     <div className='card-wrap'>

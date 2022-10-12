@@ -13,4 +13,4 @@ class SessionHandler {
     }
 }
 
-export default new SessionHandler;
+export default new SessionHandler();

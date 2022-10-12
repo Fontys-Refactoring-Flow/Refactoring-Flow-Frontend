@@ -18,6 +18,7 @@ import Course from './components/CourseComponents/Course';
 import CodeFeedbackPage from './components/CodeFeedbackComponents/CodeFeedbackPage';
 import AssignmentWorkspace from './components/AssignmentComponents/AssignmentWorkspace';
 import LearningOutcomes from './components/AssignmentComponents/LearningOutcomes';
+import AuthContext, {AuthProvider} from "./components/context/AuthContext";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
     return (
       <Router>
         <div className="App">
+          <AuthProvider>
           <Header />
           <Routes>
             <Route path='/' element={<HomePage/>}/>
@@ -32,6 +34,7 @@ function App() {
             <Route path='/about' element={<AboutUs/>}/>
           </Routes>
           <Footer />
+          </AuthProvider>
         </div>
       </Router>
     );
@@ -40,6 +43,7 @@ function App() {
     return (
       <Router>
         <div className="App">
+          <AuthProvider>
           <Header />
           <Routes>
             <Route path='/' element={<HomePage/>}/>
@@ -59,6 +63,7 @@ function App() {
             {/* <Route path='/learning_outcomes' element={<LearningOutcomes/>}/> */}
           </Routes>
           <Footer />
+          </AuthProvider>
         </div>
       </Router>
     );
