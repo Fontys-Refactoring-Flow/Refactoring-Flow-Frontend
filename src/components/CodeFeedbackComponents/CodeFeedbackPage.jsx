@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import '../../style/CodeFeedback.css'
 import Codefield from './Codefield';
-import LocalStorageManager from '../../Services/LocalStorageManager';
+import LocalStorageManager from '../../services/LocalStorageManager';
 import FeedbackBubble from './FeedbackBubble';
 
 

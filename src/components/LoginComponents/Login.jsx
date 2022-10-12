@@ -4,9 +4,9 @@ import '../../style/AssignmentsPage.css'
 import '../../style/Button.css'
 import '../../style/Card.css'
 import '../../style/Image.css'
-import UserService from '../../Services/UserService'
+import UserService from '../../services/UserService'
 import SessionHandler from '../../SessionHandler/SessionHandler'
-import StudentService from '../../Services/StudentService'
+import StudentService from '../../services/StudentService'
 
 function Login() {
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import '../../style/Button.css'
 import '../../style/Card.css'
 import { Link } from 'react-router-dom';
-import AssignmentService from '../../Services/AssignmentService';
+import AssignmentService from '../../services/AssignmentService';
 import SessionHandler from '../../SessionHandler/SessionHandler';
 
 class AssignmentInProgress extends Component {
