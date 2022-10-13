@@ -1,15 +1,30 @@
-import {createContext, useContext, useEffect, useState} from "react";
+import {createContext, Dispatch, HTMLAttributes, SetStateAction, useContext, useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import {axiosInstance, axiosInstancePublic} from "../../services/axios.service";
+import {AxiosResponse} from "axios";
 
-const AuthContext = createContext(null)
+type AuthContextType = {
+    student: string | null
+    setStudent?: Dispatch<SetStateAction<string>>
+    login: (username: string, password: string) => Promise<AxiosResponse | void>
+    refresh: (refreshToken : string) => Promise<AxiosResponse | void>
+    register: (username : string, email : string, password : string) => Promise<AxiosResponse | void>
+    logout: () => void
+    hasAuth: (auth : string) => boolean
+    hasAdminAuth: () => boolean
+    hasStudentAuth: () => boolean
+    loading: boolean
+}
+
+
+const AuthContext = createContext<AuthContextType | null>(null)
 export default AuthContext
 
 export const useAuth = () => {
     return useContext(AuthContext)
 }
 
-export const AuthProvider = ({children}) => {
+export const AuthProvider = ({children} : HTMLAttributes<any>) => {
     const navigate = useNavigate()
     let [student, setStudent] = useState("")
     let [loading, setLoading] = useState(true)
@@ -34,7 +49,7 @@ export const AuthProvider = ({children}) => {
         return hasRole("STUDENT")
     }
 
-    const hasRole = (auth) => {
+    const hasRole = (auth: string) => {
         if(student === "" || student === "{}") return false;
         try {
             const authorities = JSON.parse(student).authorities
@@ -44,7 +59,7 @@ export const AuthProvider = ({children}) => {
         }
     }
 
-    const login = async (email, password) => {
+    const login = async (email: string, password: string) => {
         setLoading(true);
         const data = {
             "email": email,
@@ -69,7 +84,7 @@ export const AuthProvider = ({children}) => {
             })
     }
 
-    const refresh = (refreshToken) => {
+    const refresh = (refreshToken : string) => {
         setLoading(true);
         return axiosInstancePublic
             .post('refresh', {
@@ -90,7 +105,7 @@ export const AuthProvider = ({children}) => {
             })
     }
 
-    const register = (username, email, password) => {
+    const register = (username : string, email : string, password : string) => {
         setLoading(true);
         const data = {
             "username": username,
@@ -119,7 +134,7 @@ export const AuthProvider = ({children}) => {
         return navigate("/login")
     }
 
-    let contextData = {
+    let contextData : AuthContextType = {
         student,
         setStudent,
         login,
@@ -136,7 +151,7 @@ export const AuthProvider = ({children}) => {
         async config => {
             const keys = JSON.parse(sessionStorage.getItem('student') || '{}')
             if(!keys.accessToken || !keys.refreshToken) navigate("/login")
-            config.headers.Authorization = `${keys.tokenType} ${keys.accessToken}`
+            config.headers!.Authorization = `${keys.tokenType} ${keys.accessToken}`
             return config;
         },
         error => {

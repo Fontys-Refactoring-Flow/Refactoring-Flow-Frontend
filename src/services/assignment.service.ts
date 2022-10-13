@@ -8,12 +8,12 @@ class AssignmentService{
         return axios.get(ASSIGNMENT_API_BASE_URL);
     }
 
-    getAssignmentById(assignmentid){
-        console.log(assignmentid);
-        return axios.get(ASSIGNMENT_API_BASE_URL  + "id/" + assignmentid);
+    getAssignmentById(assignmentId : string){
+        console.log(assignmentId);
+        return axios.get(ASSIGNMENT_API_BASE_URL  + "id/" + assignmentId);
     }
 
-    getAssignmentByStudentId(studentId){
+    getAssignmentByStudentId(studentId : string){
         return axios.get(ASSIGNMENT_API_BASE_URL  + 'findByStudentId/' + studentId)
     }
 }

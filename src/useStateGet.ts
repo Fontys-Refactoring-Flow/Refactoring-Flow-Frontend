@@ -1,16 +1,15 @@
 import React from 'react';
-import { flushSync } from 'react-dom';
+import {flushSync} from 'react-dom';
 
 // This hook is actually useless...
-function useStateGet(value) {
+function useStateGet(value: any) {
     const [target, setTarget] = React.useState(value);
     
     const getTarget = async () => {
-        let newValue = await target;
-        return newValue;
+        return await target;
     }
 
-    const setFlushTarget = (newValue) => {
+    const setFlushTarget = (newValue: any) => {
         flushSync(() => {
             setTarget(newValue);
         });

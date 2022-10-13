@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import CodeField from '../code/codeFeedback/Codefield';
+import CodeField from '../code/codeFeedback/CodeField';
 import CodeService from '../../services/code.service';
 import { useParams } from 'react-router-dom';
 import '../../style/AssignmentWorkspace.css';

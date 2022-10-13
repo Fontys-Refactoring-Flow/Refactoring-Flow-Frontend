@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {ChangeEvent, ChangeEventHandler, FormEvent, useContext, useEffect, useState} from 'react'
 import LoginImage from "../../images/LoginImage.png"
 import '../../style/AssignmentsPage.css'
 import '../../style/Button.css'
@@ -10,21 +10,11 @@ import {useNavigate} from "react-router-dom";
 function Login() {
     const auth = useContext(AuthContext)
     const navigate = useNavigate()
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
-
-    function changeEmailHandler(event){
-        event.preventDefault();
-        setEmail(event.target.value);
-    }
-
-    function changePasswordHandler(event){
-        event.preventDefault();
-        setPassword(event.target.value);
-    }
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     function handleLogin(){
-        auth.login(email, password).then(() => {
+        auth?.login(email, password).then(() => {
             navigate("/")
         })
     }
@@ -39,9 +29,9 @@ function Login() {
                     <div className='form-group'>
                         <h5>Login</h5>
                         <label>E-mail address</label>
-                        <input placeholder='E-mail address' name='email' className='form-control' value={email} onChange={changeEmailHandler} />
+                        <input placeholder='E-mail address' name='email' className='form-control' value={email} onChange={(e) => setEmail(e.target.value)} />
                         <label>Password</label>
-                        <input type="password" placeholder='Password' name='password' className='form-control' value={password} onChange={changePasswordHandler} />
+                        <input type="password" placeholder='Password' name='password' className='form-control' value={password} onChange={(e) => setPassword(e.target.value)} />
                         <a className="btn btn-refactoring text-white" onClick={handleLogin}  style={{ marginTop: '10px' }}>
                             Login
                         </a>

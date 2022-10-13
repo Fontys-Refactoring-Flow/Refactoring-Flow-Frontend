@@ -1,7 +1,11 @@
 import React from 'react';
 import '../../../style/CodeFeedback.css'
 
-const FeedbackBubble = (props) => {
+type FeedbackBubbleProps = {
+    text: string
+}
+
+const FeedbackBubble = (props: FeedbackBubbleProps) => {
     return(
         <div className='card feedback-bubble'>
             <div className='card-body'>

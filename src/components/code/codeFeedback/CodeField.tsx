@@ -1,12 +1,16 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import '../../../style/CodeFeedback.css'
 import CodeService from '../../../services/code.service';
 
-const Codefield = (props) => {
+type CodeFieldProps = {
+    code: string
+}
 
-    const [code, setCode] = React.useState();
-    const [fontsize, setFontsize] = React.useState(14); // default fontsize is 14
+const CodeField = (props: CodeFieldProps) => {
+
+    const [code, setCode] = useState("");
+    const [fontsize, setFontsize] = useState(14); // default fontsize is 14
 
 
     useEffect(() => {
@@ -34,7 +38,7 @@ const Codefield = (props) => {
                 value={code}
                 language='java'
                 placeholder='insert code'
-                onChange={(env) => setCode(env.target.value)}
+                onChange={(e) => setCode(e.target.value)}
                 padding={15}
                 style={{
                     fontSize: fontsize,
@@ -46,4 +50,4 @@ const Codefield = (props) => {
     );
 }
 
-export default Codefield;
+export default CodeField;

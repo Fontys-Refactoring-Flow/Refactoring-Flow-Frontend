@@ -3,8 +3,8 @@ class LocalStorageManager {
     CodeKey = 'uploadCode';
 
     GetUploadedCode(){
-        let code =  localStorage.getItem(this.CodeKey);
-        return code;
+        const code = localStorage.getItem(this.CodeKey);
+        return code === null ? "" : code;
     }
 
     GetAndClearUploadedCode(){
@@ -13,7 +13,7 @@ class LocalStorageManager {
         return code;
     }
 
-    SetUploadedCode(code){
+    SetUploadedCode(code : string){
         localStorage.setItem(this.CodeKey, code);
     }
 }

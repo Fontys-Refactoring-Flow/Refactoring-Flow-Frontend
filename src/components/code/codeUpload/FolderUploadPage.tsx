@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ChangeEvent, ChangeEventHandler, useState} from 'react';
 import CodeService from '../../../services/code.service';
 import LocalStorageManager from '../../../services/localStorageManager';
 import '../../../style/Main.css';
@@ -6,23 +6,23 @@ import '../../../style/Main.css';
 
 const FolderUpload = () => {
 
-    const [selectedFile, setSelectedFile] = React.useState(null);
-    const [fileString, setFileString] = React.useState();
+    const [selectedFile, setSelectedFile] = useState<null | File>(null);
+    const [fileString, setFileString] = useState<string | null>();
 
 
     const addFileStringToLocal = () => {
-        LocalStorageManager.SetUploadedCode(fileString);
+        LocalStorageManager.SetUploadedCode(fileString!);
     }
 
 
-    function ReadSingleFile(evt){
-        var file = evt.target.files[0];
+    function ReadSingleFile(evt: ChangeEvent<HTMLInputElement>){
+        const file = evt.target.files![0];
 
         if (file) {
-            var r = new FileReader();
-            r.onload = function(e) { 
-                var contents = e.target.result;
-                setFileString(contents);
+            const r = new FileReader();
+            r.onload = function(e) {
+                const contents = e.target!.result;
+                setFileString(contents?.toString());
                 // setFlushFileString(contents);
             }
 
@@ -33,8 +33,8 @@ const FolderUpload = () => {
         }
     }
 
-    function OnFileChange(event){
-        setSelectedFile(event.target.files[0]);
+    function OnFileChange(event : ChangeEvent<HTMLInputElement>){
+        setSelectedFile(event.target.files![0]);
         ReadSingleFile(event);
 
         // add the code to local storage to transfer it to the editor.

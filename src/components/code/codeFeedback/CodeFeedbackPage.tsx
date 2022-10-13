@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import '../../../style/CodeFeedback.css'
-import Codefield from './Codefield';
+import CodeField from './CodeField';
 import LocalStorageManager from '../../../services/localStorageManager';
 import FeedbackBubble from './FeedbackBubble';
 
@@ -17,7 +17,7 @@ const CodeFeedbackPage = () => {
     return(
         <div className='container code-feedback-Container'>
             <div className='code-field'>
-                <Codefield code={LocalStorageManager.GetUploadedCode()}/>
+                <CodeField code={LocalStorageManager.GetUploadedCode()!}/>
             </div>
 
             <div className='feedback-container'>

@@ -3,15 +3,15 @@ import '../../style/Header.css'
 import { Link } from 'react-router-dom'
 import {useAuth} from "../context/AuthContext";
 
-const Header = (props) => {
+const Header = () => {
     const auth = useAuth()
 
     const handleLogout = () => {
-        auth.logout()
+        auth?.logout()
     }
 
     let student
-    try { student = JSON.parse(auth.student) } catch (err) {}
+    try { student = JSON.parse(auth?.student!) } catch (err) {}
     if (student != null && student.id !== null) {
         return (
             <header className='p-3  text-white' id='header'>
