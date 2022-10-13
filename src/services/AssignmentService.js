@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const ASSIGNMENT_API_BASE_URL = "http://localhost:8080/api/v1/assignment";
+const ASSIGNMENT_API_BASE_URL = "http://localhost:8080/api/v1/assignment/";
 
 class AssignmentService{
 
@@ -10,11 +10,11 @@ class AssignmentService{
 
     getAssignmentById(assignmentid){
         console.log(assignmentid);
-        return axios.get(ASSIGNMENT_API_BASE_URL + '/' + "id/" + assignmentid);
+        return axios.get(ASSIGNMENT_API_BASE_URL  + "id/" + assignmentid);
     }
 
     getAssignmentByStudentId(studentId){
-        return axios.get(ASSIGNMENT_API_BASE_URL  + '/findByStudentId/' + studentId)
+        return axios.get(ASSIGNMENT_API_BASE_URL  + 'findByStudentId/' + studentId)
     }
 }
 
