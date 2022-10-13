@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d5d79eb0-af27-4eec-aa74-3a50a1e918d0" name="Changes" comment="Optimized imports" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="typescript-migration" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2EAShb0DYWRRrj7eILs2c4Inhsb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/abevr/Projecten/Refactoring Flow Frontend/src/components&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2021.3.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\abevr\Projecten\Refactoring Flow Frontend\src\components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\abevr\Projecten\Refactoring Flow Frontend\src\components\code" />
+      <recent name="C:\Users\abevr\Projecten\Refactoring Flow Frontend\src\components\context" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d5d79eb0-af27-4eec-aa74-3a50a1e918d0" name="Changes" comment="" />
+      <created>1662037018450</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662037018450</updated>
+      <workItem from="1662037022915" duration="2436000" />
+      <workItem from="1662364271239" duration="205000" />
+      <workItem from="1662364549987" duration="28000" />
+      <workItem from="1662534892721" duration="1258000" />
+      <workItem from="1662639706656" duration="1788000" />
+      <workItem from="1663140263709" duration="711000" />
+      <workItem from="1663325468909" duration="107000" />
+      <workItem from="1663831000015" duration="655000" />
+      <workItem from="1663845223346" duration="1552000" />
+      <workItem from="1664350633384" duration="3765000" />
+      <workItem from="1664958754265" duration="976000" />
+      <workItem from="1665054051573" duration="1528000" />
+      <workItem from="1665559599943" duration="8236000" />
+      <workItem from="1665646698590" duration="9788000" />
+      <workItem from="1665664723865" duration="1051000" />
+    </task>
+    <task id="LOCAL-00001" summary="Added project configuration files">
+      <created>1662037879188</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662037879188</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Updated package-lock.json">
+      <created>1662037903841</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1662037903841</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fix naming errors">
+      <created>1665559935268</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665559935268</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update frontend login functionality">
+      <created>1665563339745</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665563339745</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Fix frontend login functionality to use AuthContext and Authorized routes">
+      <created>1665568131737</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665568131737</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Removed SessionHandler, use AuthContext instead">
+      <created>1665651636409</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1665651636409</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fix folder capitalization">
+      <created>1665651780303</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1665651780303</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fix folder capitalization, moved seperate code component folders into 1 main folder">
+      <created>1665652095469</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1665652095469</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fix services naming">
+      <created>1665652199642</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1665652199642</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fix vulnerable dependencies">
+      <created>1665661124289</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1665661124289</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Changed files to tsx / ts and fixed type issues.">
+      <created>1665665109359</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1665665109359</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Removed course and segment files">
+      <created>1665665122116</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1665665122116</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Optimized imports">
+      <created>1665665292215</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1665665292215</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/Services/LocalStorageManager.js" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="typescript-migration" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added project configuration files" />
+    <MESSAGE value="Updated package-lock.json" />
+    <MESSAGE value="Fix naming errors" />
+    <MESSAGE value="Update frontend login functionality" />
+    <MESSAGE value="Fix frontend login functionality to use AuthContext and Authorized routes" />
+    <MESSAGE value="Remove SessionHandler, use AuthContext instead" />
+    <MESSAGE value="Fix folder capitalization" />
+    <MESSAGE value="Fix folder capitalization, moved seperate code component folders into 1 main folder" />
+    <MESSAGE value="Fix services naming" />
+    <MESSAGE value="Fix vulnerable dependencies" />
+    <MESSAGE value="Change files to tsx / ts and fixed type issues" />
+    <MESSAGE value="Changed files to tsx / ts and fixed type issues" />
+    <MESSAGE value="Changed files to tsx / ts and fixed type issues." />
+    <MESSAGE value="Removed course and segment files" />
+    <MESSAGE value="Optimized imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimized imports" />
+  </component>
+</project>
