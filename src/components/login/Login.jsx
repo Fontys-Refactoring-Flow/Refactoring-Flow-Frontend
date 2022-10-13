@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
-import LoginImage from "../../Images/LoginImage.png"
+import LoginImage from "../../images/LoginImage.png"
 import '../../style/AssignmentsPage.css'
 import '../../style/Button.css'
 import '../../style/Card.css'

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AssignmentService from '../../services/AssignmentService';
+import AssignmentService from '../../services/assignment.service';
 import '../../style/AssignmentsPage.css'
 import '../../style/Button.css'
 import '../../style/Card.css'

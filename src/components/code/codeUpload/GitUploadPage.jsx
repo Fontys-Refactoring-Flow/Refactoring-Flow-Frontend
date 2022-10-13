@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import '../../style/Main.css'
-import '../../style/CodeUpload.css'
+import '../../../style/Main.css'
+import '../../../style/CodeUpload.css'
 
 
 class GitUpload extends Component {
