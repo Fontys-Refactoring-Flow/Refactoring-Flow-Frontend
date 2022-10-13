@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Card from '../GeneralComponents/Card';
-import '../../style/Home.css';
-import FolderImage from '../../Images/Folder.png'
-import GithubImage from '../../Images/GithubLogo.png';
-import GitlabImage from '../../Images/GitlabLogo.png';
+import Card from '../../general/Card';
+import '../../../style/Home.css';
+import FolderImage from '../../../images/Folder.png'
+import GithubImage from '../../../images/GithubLogo.png';
+import GitlabImage from '../../../images/GitlabLogo.png';
 
 class UploadMethodList extends Component {
 

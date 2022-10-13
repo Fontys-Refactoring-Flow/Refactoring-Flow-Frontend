@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../style/CodeFeedback.css'
+import '../../../style/CodeFeedback.css'
 
 const FeedbackBubble = (props) => {
     return(

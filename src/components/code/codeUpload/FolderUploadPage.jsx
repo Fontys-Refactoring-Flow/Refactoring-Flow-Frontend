@@ -1,7 +1,7 @@
 import React from 'react';
-import CodeService from '../../services/CodeService';
-import LocalStorageManager from '../../services/LocalStorageManager';
-import '../../style/Main.css';
+import CodeService from '../../../services/CodeService';
+import LocalStorageManager from '../../../services/LocalStorageManager';
+import '../../../style/Main.css';
 
 
 const FolderUpload = () => {

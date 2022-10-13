@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../style/Main.css'
+import '../../../style/Main.css'
 
 class UploadMethodCard extends Component {
     constructor(props) {

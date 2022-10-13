@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ProgressBar from '../GeneralComponents/ProgressBar.jsx';
+import ProgressBar from '../general/ProgressBar.jsx';
 import '../../style/Main.css'
 import SegmentService from '../../services/SegmentService';
 
