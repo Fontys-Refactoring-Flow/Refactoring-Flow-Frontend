@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import '../../../style/CodeFeedback.css'
-import CodeService from '../../../services/CodeService';
+import CodeService from '../../../services/code.service';
 
 const Codefield = (props) => {
 

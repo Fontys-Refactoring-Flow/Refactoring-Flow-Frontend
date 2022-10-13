@@ -2,7 +2,7 @@ import React, {Component, useEffect, useState} from 'react'
 import '../../style/Button.css'
 import '../../style/Card.css'
 import { Link } from 'react-router-dom';
-import AssignmentService from '../../services/AssignmentService';
+import AssignmentService from '../../services/assignment.service';
 import {useAuth} from "../context/AuthContext";
 
 const AssignmentInProgress = () => {

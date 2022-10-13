@@ -1,6 +1,6 @@
 import React from 'react';
-import CodeService from '../../../services/CodeService';
-import LocalStorageManager from '../../../services/LocalStorageManager';
+import CodeService from '../../../services/code.service';
+import LocalStorageManager from '../../../services/localStorageManager';
 import '../../../style/Main.css';
 
 

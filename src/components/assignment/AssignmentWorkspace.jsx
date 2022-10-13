@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import CodeField from '../code/codeFeedback/Codefield';
-import CodeService from '../../services/CodeService';
+import CodeService from '../../services/code.service';
 import { useParams } from 'react-router-dom';
 import '../../style/AssignmentWorkspace.css';
 import StepAccordion from './StepAccordion';
