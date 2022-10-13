@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import '../../../style/CodeFeedback.css'
-import CodeService from '../../../services/code.service';
 
 type CodeFieldProps = {
     code: string

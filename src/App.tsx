@@ -13,8 +13,7 @@ import AssignmentInProgress from './components/assignment/AssignmentsInProgress'
 import Login from './components/login/Login';
 import CodeFeedbackPage from './components/code/codeFeedback/CodeFeedbackPage';
 import AssignmentWorkspace from './components/assignment/AssignmentWorkspace';
-import {AuthProvider, useAuth} from "./components/context/AuthContext";
-import AuthorizedRoute from "./components/security/AuthorizedRoute";
+import {AuthProvider} from "./components/context/AuthContext";
 import PrivateRoute from "./components/security/PrivateRoute";
 
 
