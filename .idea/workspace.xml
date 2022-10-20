@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d5d79eb0-af27-4eec-aa74-3a50a1e918d0" name="Changes" comment="Add .idea config files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/learningOutcomes.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/learningOutcomes.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/assignment/AssignmentWorkspace.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/assignment/AssignmentWorkspace.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/code.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/code.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,10 +47,11 @@
     "last_opened_file_path": "C:/Users/abevr/Projecten/Refactoring Flow Frontend/src/components",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "editor.preferences.import",
-    "ts.external.directory.path": "C:\\Users\\abevr\\Projecten\\Refactoring Flow Frontend\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Users\\Antwa\\WebstormProjects\\Refactoring-Flow-Frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -196,11 +201,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/src/Services/LocalStorageManager.js" />
-      </list>
-    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
