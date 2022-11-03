@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d5d79eb0-af27-4eec-aa74-3a50a1e918d0" name="Changes" comment="Remove unused imports">
+    <list default="true" id="d5d79eb0-af27-4eec-aa74-3a50a1e918d0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/assignment/AssignmentWorkspace.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/assignment/AssignmentWorkspace.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/assignment/AssignmentsInProgress.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/assignment/AssignmentsInProgress.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/assignment/AssignmentsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/assignment/AssignmentsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/assignment/LearningOutcomes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/assignment/LearningOutcomes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/assignment/StepAccordion.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/assignment/StepAccordion.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
