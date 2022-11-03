@@ -3,7 +3,7 @@ import axios from "axios";
 class CodeService {
     GetCodeById(id: string | number){
         try{
-            return axios.get('http://localhost:8080/api/v1/CodeFile/' + id);
+            return axios.get('http://localhost:8080/api/v1/codefile/' + id);
         }
         catch(ex){
             console.error(ex);
@@ -20,6 +20,8 @@ class CodeService {
             return null;
         }
     }
+
+
 }
 
 export default new CodeService();
