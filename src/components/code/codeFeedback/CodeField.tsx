@@ -2,6 +2,8 @@ import React, {ChangeEvent, useEffect, useState} from 'react';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import '../../../style/CodeFeedback.css'
 import CodeService from "../../../services/code.service";
+import {useAuth} from "../../context/AuthContext";
+
 
 
 type CodeFieldProps = {
@@ -10,11 +12,13 @@ type CodeFieldProps = {
 
 const CodeField = (props: CodeFieldProps) => {
 
+    const auth = useAuth()
     const [code, setCode] = useState("");
     const [fontsize, setFontsize] = useState(14); // default fontsize is 14
     const [version, setVersion] = useState(1);
     const [versionMax, setVersionMax] = useState(1);
-    let fileLinks : object;
+    const [fileLinks, setFileLinks] = useState<Object>();
+    const style = { color: 'white' };
     let codeFile : string;
 
     const handleVersionChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -41,11 +45,12 @@ const CodeField = (props: CodeFieldProps) => {
 
     useEffect(() => {
         // @ts-ignore
-        CodeService.GetCodeByNameAndAssignmentID(1,"Antwan").then((res: { data: Object; }) => {
-            fileLinks = res.data
-
-
+        CodeService.GetCodeByNameAndAssignmentID(1, JSON.parse(auth.student).name).then((res: { data: Object; }) => {
+            // @ts-ignore
+            setFileLinks(res.data)
+            const fileLinks = res.data
             let latestVersion : object
+
             // @ts-ignore
             latestVersion = fileLinks[0]
             // @ts-ignore
@@ -88,7 +93,7 @@ const CodeField = (props: CodeFieldProps) => {
         <div className='editor-container'>
             <button onClick={() => setFontsize(fontsize + 2)} className='font-btn btn'>plus</button>
             <button onClick={() => setFontsize(fontsize - 2)} className='font-btn btn'>min</button>
-            <input type={"range"} min={1} max={versionMax} value={version} onChange={handleVersionChange} />
+            <input type={"range"} min={1} max={versionMax} value={version} onChange={handleVersionChange} /> <output style={style}> {version} version</output>
             {/* <button onClick={() => CodeService.PostCode(code)} className='font-btn btn'>save file</button> */}
             <CodeEditor
                 value={code}

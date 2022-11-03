@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d5d79eb0-af27-4eec-aa74-3a50a1e918d0" name="Changes" comment="Add .idea config files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/assignment/AssignmentWorkspace.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/assignment/AssignmentWorkspace.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/code/codeFeedback/CodeField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/code/codeFeedback/CodeField.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/code.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/code.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +97,7 @@
       <workItem from="1665664723865" duration="1051000" />
       <workItem from="1665665789422" duration="511000" />
       <workItem from="1667393579589" duration="10771000" />
-      <workItem from="1667463525244" duration="555000" />
+      <workItem from="1667463525244" duration="6892000" />
     </task>
     <task id="LOCAL-00001" summary="Added project configuration files">
       <created>1662037879188</created>
