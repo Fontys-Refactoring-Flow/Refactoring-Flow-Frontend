@@ -31,20 +31,20 @@ export const AuthProvider = ({children} : HTMLAttributes<any>) => {
     let [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        const jsonStudent = sessionStorage.getItem("student");
-        if(jsonStudent === null)
-            logout()
-
-        setStudent(JSON.parse(jsonStudent!))
         const interval = setInterval(() => {
             if(student === null) return
             refresh(student!.refreshToken).catch(() => {
                 navigate("/login")
             })
         }, 300000)
+        const jsonStudent = sessionStorage.getItem("student");
+        if(jsonStudent === null)
+            logout()
+
+        setStudent(JSON.parse(jsonStudent!))
         setLoading(false)
         return () => clearInterval(interval)
-    }, [student, navigate])
+    }, [navigate])
 
     const hasAdminAuth = () => {
         return hasRole("ADMIN")

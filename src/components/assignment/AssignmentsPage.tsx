@@ -7,14 +7,13 @@ import { Link } from 'react-router-dom';
 import {AssignmentType} from "../../types/AssignmentType";
 
 const AssignmentsPage = () => {
-    const [assignments, setAssignments] = useState<AssignmentType[]>()
+    const [assignments, setAssignments] = useState<AssignmentType[]>([])
 
     useEffect(() => {
         AssignmentService.getAssignments().then((res) => {
-            console.log(res)
             setAssignments(res.data)
         })
-    })
+    }, [])
 
     return (
         <div className='container'>
@@ -23,7 +22,7 @@ const AssignmentsPage = () => {
             {
                 assignments!.map(
                     assignment =>
-                        <tr key={assignment.id}>
+                        <div key={assignment.id}>
                             <div className='cards'>
                             <div className='card' style={{ width: '18rem', minHeight: '300px'}}>
                                 <div className="card-body">
@@ -52,7 +51,7 @@ const AssignmentsPage = () => {
                                 </div>
                             </div>
                             </div>
-                        </tr>
+                        </div>
                 )
             }
         </div>
