@@ -2,10 +2,11 @@ import {createContext, Dispatch, HTMLAttributes, SetStateAction, useContext, use
 import { useNavigate } from "react-router-dom";
 import {axiosInstance, axiosInstancePublic} from "../../services/axios.service";
 import {AxiosResponse} from "axios";
+import {UserAuthType} from "../../types/UserTypes";
 
 type AuthContextType = {
-    student: string | null
-    setStudent?: Dispatch<SetStateAction<string>>
+    student: UserAuthType | null
+    setStudent?: Dispatch<SetStateAction<UserAuthType | null>>
     login: (username: string, password: string) => Promise<AxiosResponse | void>
     refresh: (refreshToken : string) => Promise<AxiosResponse | void>
     register: (username : string, email : string, password : string) => Promise<AxiosResponse | void>
@@ -26,14 +27,18 @@ export const useAuth = () => {
 
 export const AuthProvider = ({children} : HTMLAttributes<any>) => {
     const navigate = useNavigate()
-    let [student, setStudent] = useState("")
+    let [student, setStudent] = useState<UserAuthType | null>(null)
     let [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        setStudent(sessionStorage.getItem("student") || "")
+        const jsonStudent = sessionStorage.getItem("student");
+        if(jsonStudent === null)
+            logout()
+
+        setStudent(JSON.parse(jsonStudent!))
         const interval = setInterval(() => {
-            if(student === "" || student === "{}") return
-            refresh(JSON.parse(student).refreshToken).catch(() => {
+            if(student === null) return
+            refresh(student!.refreshToken).catch(() => {
                 navigate("/login")
             })
         }, 300000)
@@ -50,9 +55,9 @@ export const AuthProvider = ({children} : HTMLAttributes<any>) => {
     }
 
     const hasRole = (auth: string) => {
-        if(student === "" || student === "{}") return false;
+        if(student === null) return false;
         try {
-            const authorities = JSON.parse(student).authorities
+            const authorities = student.authorities
             return authorities.includes("ROLE_" + auth)
         } catch(e) {
             return false
@@ -97,7 +102,7 @@ export const AuthProvider = ({children} : HTMLAttributes<any>) => {
                         user.accessToken = res.data.accessToken
                         user.refreshToken = res.data.refreshToken
                         sessionStorage.setItem("student", JSON.stringify(user))
-                        setStudent(JSON.stringify(user))
+                        setStudent(user)
                     }
                 }
                 setLoading(false)
@@ -128,7 +133,7 @@ export const AuthProvider = ({children} : HTMLAttributes<any>) => {
 
     const logout = () => {
         setLoading(true);
-        setStudent("");
+        setStudent(null);
         sessionStorage.removeItem("student")
         setLoading(false);
         return navigate("/login")

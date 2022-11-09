@@ -1,29 +1,22 @@
-import React, { Component } from 'react';
-import LearningOutcomesService from '../../services/learningOutcomes.service';
+import React, {useEffect, useState} from 'react';
 
-class LearningOutcomes extends Component {
-    constructor(props) {
-        super(props);
+type LearningOutcomesType = {
+    studentId: number,
+    refactoringBar: number,
+    codeQualityBar: number
+}
 
-        this.state = {
-            studentid: 4,
-            refactoringBar: 4,
-            codeQualityBar: 3
-        }
-        this.handleProgressBar = this.handleProgressBar.bind(this);
-    }
+const LearningOutcomes = (props: LearningOutcomesType) => {
+    const [studentId, setStudentId] = useState(4)
+    const [refactoringBar, setRefactoringBar] = useState(4)
+    const [codeQualityBar, setCodeQualityBar] = useState(3)
 
-    componentDidMount() {
-        //LearningOutcomesService.getLearningOutcomesByStudentId(this.state.studentid).then((res) => {
-            //console.log(res)
-            this.setState({ refactoringBar: ((this.state.refactoringBar / 5) * 100)})
-            this.setState({ codeQualityBar: ((this.state.codeQualityBar / 5) * 100)})
+    useEffect(() => {
+        setRefactoringBar((refactoringBar / 5) * 100)
+        setCodeQualityBar((codeQualityBar / 5) * 100)
+    })
 
-            console.log(this.state.refactoringBar);
-        
-    }
-
-    handleProgressBar(outcome){
+    const handleProgressBar = (outcome: number) => {
         if(outcome == 1){
             return '20%'
         }
@@ -41,52 +34,50 @@ class LearningOutcomes extends Component {
         }
     }
 
-    render() {
-        return (
-            <div className='container' style={{"marginTop": 50}}>
-                <table className='table table-striped table-bordered'>
-                    <thead>
-                        <tr>
-                            <th colspan="39" class="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none">Learning outcomes</th>
-                        </tr>
-                        <tr>
-                            <th colspan="3" class="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none" style={{ width: '20%' }}>Criteria</th>
-                            <th colspan="3" class="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none">Ratings</th>
-                            <th colspan="3" class="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none" style={{ width: '20%' }}>Points</th>
-                        </tr>
-                        <tr>
-                            <th colspan="3" class="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none" style={{ width: '20%' }}>
-                                Code Quality
-                            </th>
-                            <th colspan="3" class="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={{width: "80%", backgroundColor: "#663366"}}></div>
-                                </div>
-                            </th>
-                            <th colspan="3" class="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none" style={{ width: '20%' }}>
-                                {"4/5"}
-                            </th>
+    return (
+        <div className='container' style={{"marginTop": 50}}>
+            <table className='table table-striped table-bordered'>
+                <thead>
+                    <tr>
+                        <th colSpan={39} className="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none">Learning outcomes</th>
+                    </tr>
+                    <tr>
+                        <th colSpan={3} className="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none" style={{ width: '20%' }}>Criteria</th>
+                        <th colSpan={3} className="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none">Ratings</th>
+                        <th colSpan={3} className="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none" style={{ width: '20%' }}>Points</th>
+                    </tr>
+                    <tr>
+                        <th colSpan={3} className="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none" style={{ width: '20%' }}>
+                            Code Quality
+                        </th>
+                        <th colSpan={3} className="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none">
+                            <div className="progress">
+                                <div className="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style={{width: "80%", backgroundColor: "#663366"}}></div>
+                            </div>
+                        </th>
+                        <th colSpan={3} className="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none" style={{ width: '20%' }}>
+                            {"4/5"}
+                        </th>
 
-                        </tr>
-                        <tr>
-                            <th scope='col'>
-                                Refactoring
-                            </th>
-                            <th colspan="3" class="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={{width: "80%", backgroundColor: "#e5007d" }}></div>
-                                </div>
-                            </th>
-                            <th colspan="3" class="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none" style={{ width: '20%' }}>
-                            {"3/5"}
-                            </th>
-                        </tr>
-                    </thead>
+                    </tr>
+                    <tr>
+                        <th scope='col'>
+                            Refactoring
+                        </th>
+                        <th colSpan={3} className="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none">
+                            <div className="progress">
+                                <div className="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style={{width: "80%", backgroundColor: "#e5007d" }}></div>
+                            </div>
+                        </th>
+                        <th colSpan={3} className="fwfoD_bGBk fwfoD_fsuY fwfoD_EMjX" scope="col" aria-sort="none" style={{ width: '20%' }}>
+                        {"3/5"}
+                        </th>
+                    </tr>
+                </thead>
 
-                </table>
-            </div>
-        );
-    }
+            </table>
+        </div>
+    );
 }
 
 export default LearningOutcomes;
