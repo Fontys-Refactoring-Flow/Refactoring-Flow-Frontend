@@ -11,7 +11,7 @@ const Header = () => {
     }
 
     let student
-    try { student = JSON.parse(auth?.student!) } catch (err) {}
+    try { student = auth?.student! } catch (err) {}
     if (student != null && student.id !== null) {
         return (
             <header className='p-3  text-white' id='header'>
