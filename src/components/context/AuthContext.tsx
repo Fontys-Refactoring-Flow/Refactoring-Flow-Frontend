@@ -7,9 +7,9 @@ import {UserAuthType} from "../../types/UserTypes";
 type AuthContextType = {
     student: UserAuthType | null
     setStudent?: Dispatch<SetStateAction<UserAuthType | null>>
-    login: (username: string, password: string) => Promise<AxiosResponse | void>
+    login: (name: string, password: string) => Promise<AxiosResponse | void>
     refresh: (refreshToken : string) => Promise<AxiosResponse | void>
-    register: (username : string, email : string, password : string) => Promise<AxiosResponse | void>
+    register: (name : string, email : string, password : string) => Promise<AxiosResponse | void>
     logout: () => void
     hasAuth: (auth : string) => boolean
     hasAdminAuth: () => boolean
@@ -110,10 +110,10 @@ export const AuthProvider = ({children} : HTMLAttributes<any>) => {
             })
     }
 
-    const register = (username : string, email : string, password : string) => {
+    const register = (name : string, email : string, password : string) => {
         setLoading(true);
         const data = {
-            "username": username,
+            "name": name,
             "email": email,
             "password": password
         }

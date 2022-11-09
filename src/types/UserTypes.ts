@@ -1,6 +1,6 @@
 export type UserBasicType = {
     id: number,
-    username: string,
+    name: string,
     password?: string,
     email: string,
     authorities: Array<string>

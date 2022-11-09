@@ -1,10 +1,13 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import '../../../style/CodeFeedback.css'
-import CodeService from "../../../services/code.service";
 import {useAuth} from "../../context/AuthContext";
+import codeService from "../../../services/codeService";
 
-
+type CodeFileType = {
+    id: number,
+    version: number
+}
 
 type CodeFieldProps = {
     code: string
@@ -17,7 +20,7 @@ const CodeField = (props: CodeFieldProps) => {
     const [fontsize, setFontsize] = useState(14); // default fontsize is 14
     const [version, setVersion] = useState(1);
     const [versionMax, setVersionMax] = useState(1);
-    const [fileLinks, setFileLinks] = useState<Object>();
+    const [fileLinks, setFileLinks] = useState<Array<CodeFileType>>();
     const style = { color: 'white' };
     let codeFile : string;
 
@@ -28,13 +31,11 @@ const CodeField = (props: CodeFieldProps) => {
     }
 
     const changeVersion = (version: number) => {
-        // @ts-ignore
-        for(let i = 0; i < fileLinks.length; i++){
+        for(let i = 0; i < fileLinks!.length; i++){
+            if(fileLinks === undefined) return
 
-            // @ts-ignore
-            if (fileLinks[i].version == version) {
-                // @ts-ignore
-                CodeService.GetCodeById(fileLinks[i].id).then((res: { data: any; }) => {
+            if (fileLinks[i].version === version) {
+                codeService.getCodeById(fileLinks[i].id).then((res: { data: any; }) => {
                     codeFile = res.data;
                     setCode(codeFile);
                 })
@@ -44,29 +45,18 @@ const CodeField = (props: CodeFieldProps) => {
     }
 
     useEffect(() => {
-        // @ts-ignore
-        CodeService.GetCodeByNameAndAssignmentID(1, JSON.parse(auth.student).name).then((res: { data: Object; }) => {
-            // @ts-ignore
+        codeService.getCodeByNameAndAssignmentID(1, auth!.student!.name).then((res) => {
             setFileLinks(res.data)
-            const fileLinks = res.data
-            let latestVersion : object
+            if(fileLinks === undefined) return
+            let latestVersion : CodeFileType = fileLinks[0]
 
-            // @ts-ignore
-            latestVersion = fileLinks[0]
-            // @ts-ignore
             for(let i = 0; i < fileLinks.length; i++){
-
-                // @ts-ignore
                 if (fileLinks[i].version > latestVersion.version) {
-                    // @ts-ignore
                     latestVersion = fileLinks[i]
-                    // @ts-ignore
-                    CodeService.GetCodeById(latestVersion.id).then((res: { data: any; })=>{
+                    codeService.getCodeById(latestVersion.id).then((res: { data: any; })=>{
                         codeFile = res.data;
                         setCode(codeFile);
-                        // @ts-ignore
                         setVersionMax(latestVersion.version);
-                        // @ts-ignore
                         setVersion(latestVersion.version);
                     })
                 }
