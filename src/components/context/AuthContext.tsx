@@ -102,7 +102,6 @@ export const AuthProvider = ({children} : HTMLAttributes<any>) => {
                         sessionStorage.setItem("student", JSON.stringify(user))
                         setStudent(user)
                     }
-                    console.log(user.refreshToken)
                 }
                 setLoading(false)
                 return res.data.accessToken
