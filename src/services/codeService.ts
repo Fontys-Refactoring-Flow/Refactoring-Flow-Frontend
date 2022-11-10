@@ -8,9 +8,14 @@ const getCodeByNameAndAssignmentID = (id: string | number, name: string) => {
     return axios.get('http://localhost:8080/api/v1/codefile/get?name='+ name +'&assignmentID='+ id);
 }
 
+const postCode = (code : string) =>{
+    return axios.get('http://localhost:8080/api/v1/codefile/');
+}
+
 const codeService = {
     getCodeById,
-    getCodeByNameAndAssignmentID
+    getCodeByNameAndAssignmentID,
+    postCode
 }
 
 export default codeService
