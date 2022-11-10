@@ -38,7 +38,7 @@ function App() {
           <Route path='/about' element={<PrivateRoute><AboutUs/></PrivateRoute>}/>
           {/* <Route path='/assignment-details' element={<AssignmentDetailPage/>}/> */}
           <Route path='/studentassignments' element={<PrivateRoute><AssignmentInProgress/></PrivateRoute>}/>
-          <Route path='/assignment/:codeId' element={<PrivateRoute><AssignmentWorkspace/></PrivateRoute>}/>
+          <Route path='/assignment/:assignmentId' element={<PrivateRoute><AssignmentWorkspace/></PrivateRoute>}/>
           <Route path='/edit' element={<PrivateRoute><CodeFeedbackPage/></PrivateRoute>} />
           {/* <Route path='/learning_outcomes' element={<LearningOutcomes/>}/> */}
         </Routes>

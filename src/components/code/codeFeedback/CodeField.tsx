@@ -12,12 +12,14 @@ type CodeFileType = {
 
 type CodeFieldProps = {
     code: string
+    assignmentId? : number
 }
 
 const CodeField = (props: CodeFieldProps) => {
 
     const auth = useAuth()
     const [code, setCode] = useState("");
+    const [assignmentId, setAssignmentId] = useState(0);
     const [fontsize, setFontsize] = useState(14); // default fontsize is 14
     const [version, setVersion] = useState(1);
     const [versionMax, setVersionMax] = useState(1);
@@ -63,8 +65,9 @@ const CodeField = (props: CodeFieldProps) => {
 
 
     useEffect(() => {
-        codeService.getCodeByNameAndAssignmentID(1, auth!.student!.name).then((file) => {
-            setFileLinks(file.data);
+        if(props.assignmentId) setAssignmentId(props.assignmentId)
+        codeService.getCodeByNameAndAssignmentID(assignmentId, auth!.student!.name).then((file) => {
+            setFileLinks(file.data)
 
             let latestVersion : CodeFileType = file.data[0]
 
@@ -73,14 +76,12 @@ const CodeField = (props: CodeFieldProps) => {
 
                 if (file.data[i].version >= latestVersion.version) {
                     latestVersion = file.data[i];
-                    codeService.getCodeById(file.data[i].id).then((res: { data: any; })=>{
+                    codeService.getCodeById(file.data[i].id).then((res)=>{
 
                         setCode(res.data);
                         setVersionMax(latestVersion.version);
                         setVersion(latestVersion.version);
-                        setTimeout(() => {
-                            changeVersionFlow(latestVersion.version, file.data);
-                        }, 2);
+                        changeVersionFlow(latestVersion.version, file.data);
                     })
 
                 }
@@ -100,7 +101,7 @@ const CodeField = (props: CodeFieldProps) => {
         }
 
         setCode(loadedCode)
-    }, [props])
+    }, [props, assignmentId])
 
 
 

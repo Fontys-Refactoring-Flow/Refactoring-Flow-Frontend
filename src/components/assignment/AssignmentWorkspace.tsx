@@ -3,6 +3,7 @@ import CodeField from '../code/codeFeedback/CodeField';
 import { useParams } from 'react-router-dom';
 import '../../style/AssignmentWorkspace.css';
 import StepAccordion from './StepAccordion';
+import {number} from "prop-types";
 
 const AssignmentWorkspace = () => {
 
@@ -10,9 +11,7 @@ const AssignmentWorkspace = () => {
     let fileLinks = {};
     let codeFile;
 
-
-
-    let params = useParams();
+    const {assignmentId} = useParams();
 
     function bin2String(array: Array<string>) {
         var result = "";
@@ -22,14 +21,10 @@ const AssignmentWorkspace = () => {
         return result;
     }
 
-    useEffect(() => {
-
-    }, [params])
-
     return (
         <div className='container assignment-container'>
             <div className='editor-container code-field'>
-                <CodeField code={code}/>
+                <CodeField code={code} assignmentId={parseInt(assignmentId || "")}/>
             </div>
             <StepAccordion/>
         </div>
