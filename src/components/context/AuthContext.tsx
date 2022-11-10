@@ -33,9 +33,7 @@ export const AuthProvider = ({children} : HTMLAttributes<any>) => {
     useEffect(() => {
         const interval = setInterval(() => {
             if(student === null) return
-            refresh(student!.refreshToken).catch(() => {
-                navigate("/login")
-            })
+            refresh(student!.refreshToken).then()
         }, 300000)
         const jsonStudent = sessionStorage.getItem("student");
         if(jsonStudent === null)
@@ -96,9 +94,9 @@ export const AuthProvider = ({children} : HTMLAttributes<any>) => {
                 refreshToken
             })
             .then((res) => {
-                if(res.data.accessToken && res.data.refreshToken) {
+                if (res.data.accessToken && res.data.refreshToken) {
                     let user = JSON.parse(sessionStorage.getItem("student") || '{}')
-                    if(user.accessToken && user.refreshToken) {
+                    if (user.accessToken && user.refreshToken) {
                         user.accessToken = res.data.accessToken
                         user.refreshToken = res.data.refreshToken
                         sessionStorage.setItem("student", JSON.stringify(user))
@@ -107,6 +105,9 @@ export const AuthProvider = ({children} : HTMLAttributes<any>) => {
                 }
                 setLoading(false)
                 return res.data.accessToken
+            }).catch(() => {
+                logout()
+                setLoading(false)
             })
     }
 
@@ -175,8 +176,6 @@ export const AuthProvider = ({children} : HTMLAttributes<any>) => {
             refresh(user.refreshToken).then((token) => {
                 axiosInstance.defaults.headers.common['Authorization'] = `${user.tokenType} ${token}`;
                 return axiosInstance.request(originalRequest);
-            }).catch(() => {
-                navigate("/login")
             })
         }
         setLoading(false);
