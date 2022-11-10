@@ -3,6 +3,7 @@ import CodeEditor from '@uiw/react-textarea-code-editor';
 import '../../../style/CodeFeedback.css'
 import {useAuth} from "../../context/AuthContext";
 import codeService from "../../../services/codeService";
+import {invoke} from "q";
 
 type CodeFileType = {
     id: number,
@@ -30,6 +31,7 @@ const CodeField = (props: CodeFieldProps) => {
         changeVersion(version)
     }
 
+
     const changeVersion = (version: number) => {
         for(let i = 0; i < fileLinks!.length; i++){
             if(fileLinks === undefined) return
@@ -44,23 +46,46 @@ const CodeField = (props: CodeFieldProps) => {
         }
     }
 
-    useEffect(() => {
-        codeService.getCodeByNameAndAssignmentID(1, auth!.student!.name).then((res) => {
-            setFileLinks(res.data)
-            if(fileLinks === undefined) return
-            let latestVersion : CodeFileType = fileLinks[0]
+    const changeVersionFlow = (version: number, file : Array<CodeFileType>) => {
+        for(let i = 0; i < file!.length; i++){
+            if(file === undefined) return
 
-            for(let i = 0; i < fileLinks.length; i++){
-                if (fileLinks[i].version > latestVersion.version) {
-                    latestVersion = fileLinks[i]
-                    codeService.getCodeById(latestVersion.id).then((res: { data: any; })=>{
-                        codeFile = res.data;
-                        setCode(codeFile);
+            if (file[i].version === version) {
+                codeService.getCodeById(file[i].id).then((res: { data: any; }) => {
+                    codeFile = res.data;
+                    setCode(codeFile);
+                })
+
+            }
+        }
+    }
+
+
+
+    useEffect(() => {
+        codeService.getCodeByNameAndAssignmentID(1, auth!.student!.name).then((file) => {
+            setFileLinks(file.data);
+
+            let latestVersion : CodeFileType = file.data[0]
+
+
+            for(let i = 0; i < file.data.length; i++){
+
+                if (file.data[i].version >= latestVersion.version) {
+                    latestVersion = file.data[i];
+                    codeService.getCodeById(file.data[i].id).then((res: { data: any; })=>{
+
+                        setCode(res.data);
                         setVersionMax(latestVersion.version);
                         setVersion(latestVersion.version);
+                        setTimeout(() => {
+                            changeVersionFlow(latestVersion.version, file.data);
+                        }, 2);
                     })
+
                 }
             }
+
         });
 
         let loadedCode = props.code;
