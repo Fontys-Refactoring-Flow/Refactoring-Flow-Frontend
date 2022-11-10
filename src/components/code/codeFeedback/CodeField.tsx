@@ -49,7 +49,7 @@ const CodeField = (props: CodeFieldProps) => {
     }
 
     const submitCode = () => {
-       console.log(codeService.postCode(code, assignmentId, auth!.student!.id));
+        codeService.postCode(code, assignmentId, auth!.student!.id, versionMax);
     }
 
     const changeVersionFlow = (version: number, file : Array<CodeFileType>) => {

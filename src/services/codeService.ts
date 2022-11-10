@@ -10,15 +10,17 @@ const getCodeByNameAndAssignmentID = (id: string | number, name: string) => {
     return axios.get('http://localhost:8080/api/v1/codefile/get?name='+ name +'&assignmentID='+ id);
 }
 
-const postCode = (code : string, assignmentId: number, userId : number) =>{
-
+const postCode = (code : string, assignmentId: number, userId : number, version : number) =>{
+    
     return axios({
         method: 'post',
         url: 'http://localhost:8080/api/v1/codefile/',
         params: {
             code: code,
             assignmentId: assignmentId,
-            userId: userId
+            userId: userId,
+            version: version
+
         }
     });
 }
