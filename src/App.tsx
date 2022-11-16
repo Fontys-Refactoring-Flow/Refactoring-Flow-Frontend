@@ -15,6 +15,7 @@ import CodeFeedbackPage from './components/code/codeFeedback/CodeFeedbackPage';
 import AssignmentWorkspace from './components/assignment/AssignmentWorkspace';
 import {AuthProvider} from "./components/context/AuthContext";
 import PrivateRoute from "./components/security/PrivateRoute";
+import GitHubCallback from "./components/code/codeUpload/github/GitHubCallback";
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           {/* <Route path='/assignment-details' element={<AssignmentDetailPage/>}/> */}
           <Route path='/studentassignments' element={<PrivateRoute><AssignmentInProgress/></PrivateRoute>}/>
           <Route path='/assignment/:codeId' element={<PrivateRoute><AssignmentWorkspace/></PrivateRoute>}/>
+          <Route path='/github/callback' element={<PrivateRoute><GitHubCallback/></PrivateRoute>}/>
           <Route path='/edit' element={<PrivateRoute><CodeFeedbackPage/></PrivateRoute>} />
           {/* <Route path='/learning_outcomes' element={<LearningOutcomes/>}/> */}
         </Routes>
