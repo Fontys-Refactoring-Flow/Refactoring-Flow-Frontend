@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import AssignmentService from '../../services/assignment.service';
+import assignmentService from '../../services/assignment.service';
 import '../../style/AssignmentsPage.css'
 import '../../style/Button.css'
 import '../../style/Card.css'
@@ -10,7 +10,7 @@ const AssignmentsPage = () => {
     const [assignments, setAssignments] = useState<AssignmentType[]>([])
 
     useEffect(() => {
-        AssignmentService.getAssignments().then((res) => {
+        assignmentService.getAssignments().then((res) => {
             setAssignments(res.data)
         })
     }, [])
