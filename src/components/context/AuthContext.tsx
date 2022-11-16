@@ -179,7 +179,7 @@ export const AuthProvider = ({children} : HTMLAttributes<any>) => {
             originalRequest._retry = true;
             const user = JSON.parse(localStorage.getItem('student') || '{}')
             refresh(user.refreshToken).then((token) => {
-                axiosInstance.defaults.headers.common['Authorization'] = `${user.tokenType} ${token}`;
+                originalRequest.headers.Authorization = `${user.tokenType} ${token}`;
                 return axiosInstance.request(originalRequest);
             })
         }
