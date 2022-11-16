@@ -35,7 +35,7 @@ export const AuthProvider = ({children} : HTMLAttributes<any>) => {
             if(student === null) return
             refresh(student!.refreshToken).then()
         }, 300000)
-        const jsonStudent = sessionStorage.getItem("student");
+        const jsonStudent = localStorage.getItem("student");
         if(jsonStudent === null)
             logout()
 
@@ -80,7 +80,7 @@ export const AuthProvider = ({children} : HTMLAttributes<any>) => {
             })
             .then((res) => {
                 if(res.data.accessToken) {
-                    sessionStorage.setItem("student", JSON.stringify(res.data))
+                    localStorage.setItem("student", JSON.stringify(res.data))
                     setStudent(res.data)
                 }
                 setLoading(false)
@@ -95,11 +95,11 @@ export const AuthProvider = ({children} : HTMLAttributes<any>) => {
             })
             .then((res) => {
                 if (res.data.accessToken && res.data.refreshToken) {
-                    let user = JSON.parse(sessionStorage.getItem("student") || '{}')
+                    let user = JSON.parse(localStorage.getItem("student") || '{}')
                     if (user.accessToken && user.refreshToken) {
                         user.accessToken = res.data.accessToken
                         user.refreshToken = res.data.refreshToken
-                        sessionStorage.setItem("student", JSON.stringify(user))
+                        localStorage.setItem("student", JSON.stringify(user))
                         setStudent(user)
                     }
                 }
@@ -135,7 +135,7 @@ export const AuthProvider = ({children} : HTMLAttributes<any>) => {
     const logout = () => {
         setLoading(true);
         setStudent(null);
-        sessionStorage.removeItem("student")
+        localStorage.removeItem("student")
         setLoading(false);
         return navigate("/login")
     }
@@ -155,7 +155,7 @@ export const AuthProvider = ({children} : HTMLAttributes<any>) => {
 
     axiosInstance.interceptors.request.use(
         async config => {
-            const keys = JSON.parse(sessionStorage.getItem('student') || '{}')
+            const keys = JSON.parse(localStorage.getItem('student') || '{}')
             if(!keys.accessToken || !keys.refreshToken) navigate("/login")
             config.headers!.Authorization = `${keys.tokenType} ${keys.accessToken}`
             return config;
@@ -169,10 +169,15 @@ export const AuthProvider = ({children} : HTMLAttributes<any>) => {
         return response
     }, async function (error) {
         setLoading(true);
+        if(error.response === undefined) {
+            logout()
+            return
+        }
+
         const originalRequest = error.config;
         if (error.response.status === 401 && !originalRequest._retry && originalRequest.url !== "refresh") {
             originalRequest._retry = true;
-            const user = JSON.parse(sessionStorage.getItem('student') || '{}')
+            const user = JSON.parse(localStorage.getItem('student') || '{}')
             refresh(user.refreshToken).then((token) => {
                 axiosInstance.defaults.headers.common['Authorization'] = `${user.tokenType} ${token}`;
                 return axiosInstance.request(originalRequest);
