@@ -3,8 +3,9 @@ import assignmentService from '../../services/assignment.service';
 import '../../style/AssignmentsPage.css'
 import '../../style/Button.css'
 import '../../style/Card.css'
-import { Link } from 'react-router-dom';
+import {Link, Route} from 'react-router-dom';
 import {AssignmentType} from "../../types/AssignmentType";
+import CodeField from "../code/codeFeedback/CodeField";
 
 const AssignmentsPage = () => {
     const [assignments, setAssignments] = useState<AssignmentType[]>([])
@@ -46,7 +47,8 @@ const AssignmentsPage = () => {
                                         {/* <button class="btn btn-refactoring text-white" data-bs-toggle="collapse" data-bs-target={"#collapseExample" + assignment.id} aria-expanded="false" aria-controls="collapseExample">
                                             Show more info
                                         </button> */}
-                                        <Link to='/assignment/1'  className='btn btn-refactoring text-white' role="button" id={assignment.id.toString()}>Select challenge</Link>
+
+                                        <Link to={'/assignment/' + assignment.id }  className='btn btn-refactoring text-white' role="button" id={assignment.id.toString()}>Select challenge</Link>
                                     </div>
                                 </div>
                             </div>
