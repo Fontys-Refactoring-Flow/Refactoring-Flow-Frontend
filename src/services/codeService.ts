@@ -1,4 +1,5 @@
 import axios from "axios";
+import {axiosInstance} from "./axios.service";
 
 
 
@@ -12,17 +13,12 @@ const getCodeByNameAndAssignmentID = (id: string | number, name: string) => {
 
 const postCode = (code : string, assignmentId: number, userId : number, version : number) =>{
     
-    return axios({
-        method: 'post',
-        url: 'http://localhost:8080/api/v1/codefile/',
-        params: {
-            code: code,
-            assignmentId: assignmentId,
-            userId: userId,
-            version: version
-
-        }
-    });
+    return axiosInstance.post("/codefile/", {
+        code: code,
+        assignmentId: assignmentId,
+        userId: userId,
+        version: version
+    })
 }
 
 const codeService = {
