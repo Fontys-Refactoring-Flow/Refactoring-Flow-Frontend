@@ -1,12 +1,15 @@
 import {axiosInstance} from "../../../../services/axios.service";
 import {useEffect} from "react";
-import {useSearchParams} from "react-router-dom";
+import {useNavigate, useSearchParams} from "react-router-dom";
 
 const GitHubCallback = () => {
     const [params] = useSearchParams()
+    const navigate = useNavigate()
 
     useEffect(() => {
-        axiosInstance.post(`/github/callback?code=${params.get("code")}`).then()
+        axiosInstance.post(`/github/callback?code=${params.get("code")}`).then(() => {
+            navigate("/")
+        })
     })
 
     return (
