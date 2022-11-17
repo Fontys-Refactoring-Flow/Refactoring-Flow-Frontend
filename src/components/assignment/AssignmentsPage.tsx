@@ -3,9 +3,8 @@ import assignmentService from '../../services/assignment.service';
 import '../../style/AssignmentsPage.css'
 import '../../style/Button.css'
 import '../../style/Card.css'
-import {Link, Route} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {AssignmentType} from "../../types/AssignmentType";
-import CodeField from "../code/codeFeedback/CodeField";
 
 const AssignmentsPage = () => {
     const [assignments, setAssignments] = useState<AssignmentType[]>([])

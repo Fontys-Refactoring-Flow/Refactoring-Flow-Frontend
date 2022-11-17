@@ -23,28 +23,28 @@ function App() {
     <Router>
       <div className="App">
         <AuthProvider>
-        <Header />
-        <Routes>
-          <Route path='/' element={<HomePage/>}/>
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/about' element={<AboutUs/>}/>
-          <Route path='/' element={<HomePage/>}/>
-          <Route path='/assignments' element={<PrivateRoute><AssignmentsPage/></PrivateRoute>}/>
-          <Route path='/upload' element={<PrivateRoute><UploadMethodList/></PrivateRoute>}/>
-          <Route path='/upload/github' element={<PrivateRoute><GitUpload gitPlatform='GitHub'/></PrivateRoute>}/>
-          <Route path='/upload/gitlab' element={<PrivateRoute><GitUpload gitPlatform='GitLab'/></PrivateRoute>}/>
-          <Route path='/upload/folder' element={<PrivateRoute><FolderUpload/></PrivateRoute>}/>
-          <Route path='/upload' element={<PrivateRoute><UploadProjectPage/></PrivateRoute>}/>
-          {/* <Route path='/progress' element={<ProgressPage/>}/> */}
-          <Route path='/about' element={<PrivateRoute><AboutUs/></PrivateRoute>}/>
-          {/* <Route path='/assignment-details' element={<AssignmentDetailPage/>}/> */}
-          <Route path='/studentassignments' element={<PrivateRoute><AssignmentInProgress/></PrivateRoute>}/>
-          <Route path='/github/callback' element={<PrivateRoute><GitHubCallback/></PrivateRoute>}/>
-          <Route path='/assignment/:assignmentId' element={<PrivateRoute><AssignmentWorkspace/></PrivateRoute>}/>
-          <Route path='/edit' element={<PrivateRoute><CodeFeedbackPage/></PrivateRoute>} />
-          {/* <Route path='/learning_outcomes' element={<LearningOutcomes/>}/> */}
-        </Routes>
-        <Footer />
+          <Header />
+          <Routes>
+            <Route path='/' element={<HomePage/>}/>
+            <Route path='/login' element={<Login/>}/>
+            <Route path='/about' element={<AboutUs/>}/>
+            <Route path='/' element={<HomePage/>}/>
+            <Route path='/assignments' element={<PrivateRoute><AssignmentsPage/></PrivateRoute>}/>
+            <Route path='/upload' element={<PrivateRoute><UploadMethodList/></PrivateRoute>}/>
+            <Route path='/upload/github' element={<PrivateRoute><GitUpload gitPlatform='GitHub'/></PrivateRoute>}/>
+            <Route path='/upload/gitlab' element={<PrivateRoute><GitUpload gitPlatform='GitLab'/></PrivateRoute>}/>
+            <Route path='/upload/folder' element={<PrivateRoute><FolderUpload/></PrivateRoute>}/>
+            <Route path='/upload' element={<PrivateRoute><UploadProjectPage/></PrivateRoute>}/>
+            {/* <Route path='/progress' element={<ProgressPage/>}/> */}
+            <Route path='/about' element={<PrivateRoute><AboutUs/></PrivateRoute>}/>
+            {/* <Route path='/assignment-details' element={<AssignmentDetailPage/>}/> */}
+            <Route path='/studentassignments' element={<PrivateRoute><AssignmentInProgress/></PrivateRoute>}/>
+            <Route path='/github/callback' element={<PrivateRoute><GitHubCallback/></PrivateRoute>}/>
+            <Route path='/assignment/:assignmentId' element={<PrivateRoute><AssignmentWorkspace/></PrivateRoute>}/>
+            <Route path='/edit' element={<PrivateRoute><CodeFeedbackPage/></PrivateRoute>} />
+            {/* <Route path='/learning_outcomes' element={<LearningOutcomes/>}/> */}
+          </Routes>
+          <Footer />
         </AuthProvider>
       </div>
     </Router>

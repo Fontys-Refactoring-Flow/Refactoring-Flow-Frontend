@@ -32,14 +32,10 @@ export const AuthProvider = ({children} : HTMLAttributes<any>) => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            if(student === null) return
-            refresh(student!.refreshToken).then()
+            if (student === null) return
+            refresh(student!.refreshToken).catch()
         }, 300000)
-        const jsonStudent = localStorage.getItem("student");
-        if(jsonStudent === null)
-            logout()
 
-        setStudent(JSON.parse(jsonStudent!))
         setLoading(false)
         return () => clearInterval(interval)
     }, [navigate])
@@ -95,16 +91,14 @@ export const AuthProvider = ({children} : HTMLAttributes<any>) => {
             })
             .then((res) => {
                 if (res.data.accessToken && res.data.refreshToken) {
-                    let user = JSON.parse(localStorage.getItem("student") || '{}')
-                    if (user.accessToken && user.refreshToken) {
-                        user.accessToken = res.data.accessToken
-                        user.refreshToken = res.data.refreshToken
-                        localStorage.setItem("student", JSON.stringify(user))
-                        setStudent(user)
+                    if (student!.accessToken && student!.refreshToken) {
+                        student!.accessToken = res.data.accessToken
+                        student!.refreshToken = res.data.refreshToken
+                        localStorage.setItem("student", JSON.stringify(student))
+                        setStudent(student)
                     }
                 }
                 setLoading(false)
-                return res.data.accessToken
             }).catch(() => {
                 logout()
                 setLoading(false)
