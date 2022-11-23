@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, ChangeEvent} from 'react'
 import assignmentService from '../../services/assignment.service';
 import '../../style/AssignmentsPage.css'
 import '../../style/Button.css'
@@ -8,19 +8,40 @@ import {AssignmentType} from "../../types/AssignmentType";
 
 const AssignmentsPage = () => {
     const [assignments, setAssignments] = useState<AssignmentType[]>([])
+    const [filtered, setFiltered] = useState<AssignmentType[]>([])
+
+    const onChange = (e:ChangeEvent<HTMLInputElement>)=>{
+        if (e.target.value.length > 0){
+            setFiltered(assignments.filter(assignments => assignments.refactoringType.toLowerCase().includes(e.target.value)))
+            console.log(filtered);
+        }
+        else{
+            setFiltered(assignments)
+            console.log(filtered);
+        }
+    }
 
     useEffect(() => {
         assignmentService.getAssignments().then((res) => {
             setAssignments(res.data)
+            setFiltered(res.data)
         })
     }, [])
 
     return (
         <div className='container'>
-        <p className='title'>Select an assignment</p>
+            <div className='row'>
+                <div className='col-4'>
+                    <p className='title'>Select an Assignment</p>
+                </div>
+                <div className='col-4'>
+                    <input className='searchbar' type="text" placeholder="Search Type" onChange={onChange}/>
+                </div>
+            </div>
+
         <div className='card-container'>
             {
-                assignments!.map(
+                filtered!.map(
                     assignment =>
                         <div key={assignment.id}>
                             <div className='cards'>
