@@ -30,15 +30,21 @@ export const AuthProvider = ({children} : HTMLAttributes<any>) => {
     let [student, setStudent] = useState<UserAuthType | null>(null)
     let [loading, setLoading] = useState(true)
 
+    if(localStorage.getItem("student") != null && student == null) {
+        setStudent(JSON.parse(localStorage.getItem("student")!))
+    }
+
     useEffect(() => {
         const interval = setInterval(() => {
-            if (student === null) return
+            if(student == null) {
+                return
+            }
             refresh(student!.refreshToken).catch()
         }, 300000)
 
         setLoading(false)
         return () => clearInterval(interval)
-    }, [navigate])
+    }, [navigate, student])
 
     const hasAdminAuth = () => {
         return hasRole("ADMIN")
