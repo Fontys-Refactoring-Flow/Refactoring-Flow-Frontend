@@ -21,7 +21,7 @@ const CodeField = (props: CodeFieldProps) => {
     const [code, setCode] = useState("");
     const [assignmentId, setAssignmentId] = useState(0);
     const [fontsize, setFontsize] = useState(14); // default fontsize is 14
-    const [version, setVersion] = useState(1);
+    const [version, setVersion] = useState(0);
     const [versionMax, setVersionMax] = useState(1);
     const [fileLinks, setFileLinks] = useState<Array<CodeFileType>>();
     const style = { color: 'white' };
@@ -71,6 +71,15 @@ const CodeField = (props: CodeFieldProps) => {
     useEffect(() => {
         if(props.assignmentId) setAssignmentId(props.assignmentId)
         codeService.getCodeByNameAndAssignmentID(assignmentId, auth!.student!.name).then((file) => {
+            if(file.data.length === 0){
+                codeService.getTemplate(assignmentId).then((res)=>{
+                    setCode(res.data);
+                    setVersionMax(1);
+                    setVersion(0);
+                    changeVersionFlow(latestVersion.version, file.data);
+                })
+            }
+
             setFileLinks(file.data)
 
             let latestVersion : CodeFileType = file.data[0]
