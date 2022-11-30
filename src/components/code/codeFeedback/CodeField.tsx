@@ -19,6 +19,7 @@ const CodeField = (props: CodeFieldProps) => {
 
     const auth = useAuth()
     const [code, setCode] = useState("");
+    const [feedback, setFeedback] = useState("");
     const [assignmentId, setAssignmentId] = useState(0);
     const [fontsize, setFontsize] = useState(14); // default fontsize is 14
     const [version, setVersion] = useState(0);
@@ -43,7 +44,10 @@ const CodeField = (props: CodeFieldProps) => {
                     codeFile = res.data;
                     setCode(codeFile);
                 })
-
+                codeService.getFeedbackFromCodeFile(fileLinks[i].id).then((res: { data: any; }) => {
+                    setFeedback(res.data);
+                    console.log(res.data);
+                })
             }
         }
     }
@@ -61,12 +65,9 @@ const CodeField = (props: CodeFieldProps) => {
                     codeFile = res.data;
                     setCode(codeFile);
                 })
-
             }
         }
     }
-
-
 
     useEffect(() => {
         if(props.assignmentId) setAssignmentId(props.assignmentId)
