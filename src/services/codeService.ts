@@ -3,8 +3,12 @@ import {axiosInstance} from "./axios.service";
 
 
 
-const getCodeById = (assignmentId: string | number) => {
-    return axios.get('http://localhost:8080/api/v1/codefile/' + assignmentId);
+const getCodeById = (id: string | number) => {
+    return axios.get('http://localhost:8080/api/v1/codefile/' + id);
+}
+
+const getFeedbackFromCodeFile = (id: string | number) => {
+    return axios.get('http://localhost:8080/api/v1/codefile/feedback/' + id);
 }
 
 const getCodeByNameAndAssignmentID = (id: string | number, name: string) => {
@@ -29,7 +33,8 @@ const codeService = {
     getCodeById,
     getCodeByNameAndAssignmentID,
     postCode,
-    getTemplate
+    getTemplate,
+    getFeedbackFromCodeFile
 }
 
 export default codeService
