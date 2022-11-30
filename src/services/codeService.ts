@@ -20,7 +20,7 @@ const getTemplate = (id: string | number) => {
 }
 
 const postCode = (code : string, assignmentId: number, userId : number, version : number) =>{
-    
+    console.log(version);
     return axiosInstance.post("/codefile/", {
         code: code,
         assignmentId: assignmentId,
