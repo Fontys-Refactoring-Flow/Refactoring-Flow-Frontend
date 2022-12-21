@@ -5,9 +5,8 @@ const getAssignments = () => {
     return axiosInstance.get("/assignment/");
 }
 
-const getAssignmentById = (assignmentId : string) => {
-    console.log(assignmentId);
-    return axios.get(`/assignment/id/${assignmentId}`);
+const getAssignmentById = (assignmentId : number) => {
+    return axiosInstance.get(`/assignment/findById/${assignmentId}`);
 }
 
 const getAssignmentByStudentId = (studentId : string) => {
