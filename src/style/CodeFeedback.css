@@ -21,6 +21,7 @@
     background-color: rgb(58, 57, 59);
     border-radius: 15px;
     padding: 10px;
+    min-width: 60%;
     min-height: 500px;
     margin-bottom: 10%;
 }

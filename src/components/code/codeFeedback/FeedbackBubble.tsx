@@ -9,8 +9,8 @@ const FeedbackBubble = (props: FeedbackBubbleProps) => {
     return(
         <div className='card feedback-bubble'>
             <div className='card-body'>
-                <h5>{props.text}</h5>
-                <p className="card-text">{"Feedback would be visible here"}</p>
+                <h5>Feedback from your code:</h5>
+                <p className="card-text">{props.text}</p>
             </div>
         </div>
     );

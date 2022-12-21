@@ -19,12 +19,11 @@ const getTemplate = (id: string | number) => {
     return axios.get('http://localhost:8080/api/v1/codefile/template/' + id);
 }
 
-const postCode = (code : string, assignmentId: number, userId : number, version : number) =>{
-    
-    return axiosInstance.post("/codefile/", {
-        code: code,
+const postCode = (code : string, assignmentId: number, userId : number, version : number, refactorType: string) =>{
+    return axiosInstance.post(`/codefile/${refactorType}`, {
         assignmentId: assignmentId,
         userId: userId,
+        code: code,
         version: version
     })
 }
