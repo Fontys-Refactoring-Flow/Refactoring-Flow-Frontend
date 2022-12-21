@@ -54,11 +54,9 @@ const CodeField = (props: CodeFieldProps) => {
     }
 
     const submitCode = () => {
-        codeService.postCode(code, assignmentId, auth!.student!.id, versionMax, refactorType)
-            .then((res: { data: any; }) => {
-                setVersionMax(versionMax + 1);
-                setVersion(versionMax);
-            });
+        codeService.postCode(code, assignmentId, auth!.student!.id, versionMax).then(() =>{
+            window.location.reload();
+        });
     }
 
 
@@ -132,8 +130,10 @@ const CodeField = (props: CodeFieldProps) => {
         <div className='editor-container'>
             <button onClick={() => setFontsize(fontsize + 2)} className='font-btn btn'>plus</button>
             <button onClick={() => setFontsize(fontsize - 2)} className='font-btn btn'>min</button>
+
             <input type={"range"} min={1} max={versionMax} value={version} onChange={handleVersionChange} /> <output style={style}> {version} version</output>
             <button onClick={submitCode} className='font-btn btn'>submit</button>
+
             {/* <button onClick={() => CodeService.PostCode(code)} className='font-btn btn'>save file</button> */}
             <CodeEditor
                 value={code}
