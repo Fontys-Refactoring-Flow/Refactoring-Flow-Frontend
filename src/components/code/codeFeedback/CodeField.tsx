@@ -54,7 +54,7 @@ const CodeField = (props: CodeFieldProps) => {
     }
 
     const submitCode = () => {
-        codeService.postCode(code, assignmentId, auth!.student!.id, versionMax).then(() =>{
+        codeService.postCode(code, assignmentId, auth!.student!.id, versionMax, "").then(() =>{
             window.location.reload();
         });
     }
