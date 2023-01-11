@@ -1,7 +1,7 @@
-import React, {ChangeEvent, useEffect, useState} from 'react';
+import React, {ChangeEvent, useContext, useEffect, useState} from 'react';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import '../../../style/CodeFeedback.css'
-import {useAuth} from "../../context/AuthContext";
+import AuthContext, {useAuth} from "../../context/AuthContext";
 import codeService from "../../../services/codeService";
 import assignmentService from "../../../services/assignment.service";
 
@@ -18,7 +18,7 @@ type CodeFieldProps = {
 
 const CodeField = (props: CodeFieldProps) => {
 
-    const auth = useAuth()
+    const auth = useContext(AuthContext)
     const [code, setCode] = useState("");
     const [assignmentId, setAssignmentId] = useState(Number(props.assignmentId));
     const [fontsize, setFontsize] = useState(14); // default fontsize is 14
@@ -26,8 +26,6 @@ const CodeField = (props: CodeFieldProps) => {
     const [versionMax, setVersionMax] = useState(1);
     const [refactorType, setRefactorType] = useState("Extract_Method");
     const [fileLinks, setFileLinks] = useState<Array<CodeFileType>>();
-    const style = { color: 'white' };
-    let codeFile : string;
 
     const handleVersionChange = (e: ChangeEvent<HTMLInputElement>) => {
         const version = parseInt(e.target.value)
@@ -42,8 +40,7 @@ const CodeField = (props: CodeFieldProps) => {
 
             if (fileLinks[i].version === version) {
                 codeService.getCodeById(fileLinks[i].id).then((res: { data: any; }) => {
-                    codeFile = res.data;
-                    setCode(codeFile);
+                    setCode(res.data);
                 })
                 codeService.getFeedbackFromCodeFile(fileLinks[i].id).then((res: { data: any; }) => {
                     props.feedbackCallback(res.data);
@@ -54,11 +51,10 @@ const CodeField = (props: CodeFieldProps) => {
     }
 
     const submitCode = () => {
-        codeService.postCode(code, assignmentId, auth!.student!.id, versionMax, "").then(() =>{
+        codeService.postCode(code, assignmentId, auth?.student?.id!, versionMax, refactorType).then(() =>{
             window.location.reload();
         });
     }
-
 
     const changeVersionFlow = (version: number, file : Array<CodeFileType>) => {
         for(let i = 0; i < file!.length; i++){
@@ -66,8 +62,7 @@ const CodeField = (props: CodeFieldProps) => {
 
             if (file[i].version === version) {
                 codeService.getCodeById(file[i].id).then((res: { data: any; }) => {
-                    codeFile = res.data;
-                    setCode(codeFile);
+                    setCode(res.data);
                 })
             }
         }
@@ -78,7 +73,7 @@ const CodeField = (props: CodeFieldProps) => {
             setRefactorType(res.data.refactoringType);
         });
 
-        codeService.getCodeByNameAndAssignmentID(assignmentId, auth!.student!.name).then((file) => {
+        codeService.getCodeByNameAndAssignmentID(assignmentId, auth?.student?.name!).then((file) => {
             if(file.data.length === 0){
                 codeService.getTemplate(assignmentId).then((res)=>{
                     setCode(res.data);
@@ -122,16 +117,14 @@ const CodeField = (props: CodeFieldProps) => {
         }
 
         setCode(loadedCode)
-    }, [props, assignmentId])
-
-
+    }, [auth, props, assignmentId])
 
     return(
         <div className='editor-container'>
             <button onClick={() => setFontsize(fontsize + 2)} className='font-btn btn'>plus</button>
             <button onClick={() => setFontsize(fontsize - 2)} className='font-btn btn'>min</button>
 
-            <input type={"range"} min={1} max={versionMax} value={version} onChange={handleVersionChange} /> <output style={style}> {version} version</output>
+            <input type={"range"} min={1} max={versionMax} value={version} onChange={handleVersionChange} /> <output style={{ color: 'white' }}> {version} version</output>
             <button onClick={submitCode} className='font-btn btn'>submit</button>
 
             {/* <button onClick={() => CodeService.PostCode(code)} className='font-btn btn'>save file</button> */}

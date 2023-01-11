@@ -15,7 +15,6 @@ const CodeFeedbackPage = () => {
 
     useEffect(() => {
         code = LocalStorageManager.GetUploadedCode();
-        console.log(code);
     }, []);
 
     return(

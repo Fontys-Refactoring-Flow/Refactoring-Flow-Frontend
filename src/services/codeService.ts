@@ -20,7 +20,7 @@ const getTemplate = (id: string | number) => {
 }
 
 const postCode = (code : string, assignmentId: number, userId : number, version : number, refactorType: string) =>{
-    return axiosInstance.post(`/codefile/${refactorType}`, {
+    return axiosInstance.post(`/codefile?refactorType=${refactorType}`, {
         assignmentId: assignmentId,
         userId: userId,
         code: code,
