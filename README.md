@@ -92,10 +92,7 @@ _Below is an instruction on how to install the project for it's first time run._
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Implement JWT tokens
-- [ ] Import code from Git repository
-- [ ] Give teacher ability to give feedback to students
-- [ ] Make the student be able to see the feedback given by the teacher. 
+- [ ] Allow teacher to import code from Git repository
 
 See the [open issues](https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend/issues) for a full list of proposed features (and known issues).
 
