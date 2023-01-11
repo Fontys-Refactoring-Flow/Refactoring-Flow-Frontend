@@ -13,11 +13,9 @@ const AssignmentsPage = () => {
     const onChange = (e:ChangeEvent<HTMLInputElement>)=>{
         if (e.target.value.length > 0){
             setFiltered(assignments.filter(assignments => assignments.refactoringType.toLowerCase().includes(e.target.value)))
-            console.log(filtered);
         }
         else{
             setFiltered(assignments)
-            console.log(filtered);
         }
     }
 

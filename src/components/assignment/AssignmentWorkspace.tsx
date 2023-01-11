@@ -17,7 +17,6 @@ const AssignmentWorkspace = () => {
 
     const handleFeedback = (feedback: string) => {
         setFeedback(feedback);
-        console.log(feedback);
     }
 
     return (
