@@ -92,7 +92,9 @@ _Below is an instruction on how to install the project for it's first time run._
 <!-- ROADMAP -->
 ## Roadmap
 
+- [ ] Display the risks from the back-end when submitting refactor
 - [ ] Allow teacher to import code from Git repository
+
 
 See the [open issues](https://github.com/Fontys-Refactoring-Flow/Refactoring-Flow-Frontend/issues) for a full list of proposed features (and known issues).
 
