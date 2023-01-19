@@ -17,7 +17,6 @@ const AssignmentWorkspace = () => {
 
     const handleFeedback = (feedback: string) => {
         setFeedback(feedback);
-        console.log(feedback);
     }
 
     return (
@@ -25,9 +24,9 @@ const AssignmentWorkspace = () => {
             <div className='editor-container code-field'>
                 <CodeField code={code}  assignmentId={parseInt(assignmentId || "")} feedbackCallback={handleFeedback}/>
             </div>
-            <div >
+            {/*<div >
                 <FeedbackBubble text={feedback}/>
-            </div>
+            </div>*/}
 
             <StepAccordion/>
         </div>
